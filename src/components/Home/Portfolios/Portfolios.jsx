@@ -23,7 +23,7 @@ export const Porfolios = () => {
     {
       id: 2,
       slug: "proyecto-2",
-      mainImg: "/src/assets/muestras/IMG_2658.JPG",
+      mainImg: "https://i.ibb.co/wwFgyTB/IMG-2658.jpg",
       imgs: [
         "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
         "https://i.ibb.co/XFQ9XHc/20.jpg",
@@ -39,7 +39,7 @@ export const Porfolios = () => {
     {
       id: 3,
       slug: "proyecto-3",
-      mainImg: "/src/assets/muestras/IMG_0021.JPG",
+      mainImg: "https://i.ibb.co/m5zR56s/IMG-0021.jpg",
       imgs: [
         "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
         "https://i.ibb.co/XFQ9XHc/20.jpg",
@@ -54,7 +54,7 @@ export const Porfolios = () => {
     {
       id: 4,
       slug: "proyecto-4",
-      mainImg: "/src/assets/muestras/1 2.jpg",
+      mainImg: "https://i.ibb.co/VW8Y5yr/1-2.jpg",
       imgs: [
         "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
         "https://i.ibb.co/XFQ9XHc/20.jpg",

@@ -26,11 +26,15 @@ html[data-theme="dark"] {
     width: 316px;
     display: flex;
     position: absolute;
-    top: 176px;
+    top: 130px;
     left: 24px;
     justify-content: space-between;
     align-items: center;
     color: #FFF;
+}
+
+.services_card_info_text{
+    color: #FFF !important;
 }
 
 .services_card_info a{

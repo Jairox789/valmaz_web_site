@@ -70,7 +70,7 @@ export const Services = () => {
   return (
     <>
       <main className="main_services">
-        <h1>Servicios</h1>
+        <h1 className="main_services_title">Servicios</h1>
         <div className="services_card_container">
           {servicesInfo.map((service, index) => (
             <ServicesCard
