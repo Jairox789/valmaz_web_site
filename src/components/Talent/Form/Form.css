@@ -1,0 +1,84 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-talent-form-background: #DDDDDD;
+    --color-talent-form: #ffffff;
+    --color-talent-info-background: #BBBBBB;
+    --color-talent-text: #000000;
+}
+
+/* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-talent-form-background: #303030;
+    --color-talent-form: #303030;
+    --color-talent-info-background: #BBBBBB;
+    --color-talent-text: #FFFFFF;
+}
+
+.talent_form{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 60px;
+    margin-bottom: 24px;
+}
+
+.talent_form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    background: var(--color-talent-form-background);
+}
+
+.talent_form form select{
+    width: 74%;
+    margin-bottom: 8px;
+    background-color: var(--color-talent-form);
+    color: var(--color-talent-text);
+}
+
+.talent_form input[type=text]{
+    width: 80%;
+    margin-bottom: 8px;
+    background-color: var(--color-talent-form);
+}
+
+.talent_form input::placeholder{
+    color: var(--color-talent-text);
+}
+
+.talent_form input[type=file]{
+    width: 80%;
+}
+
+.talent_form label{
+    color: var(--color-talent-text);
+}
+
+.talent_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    background: var(--color-talent-info-background);
+}
+
+.talent_info p{
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: #000000;
+}
+
+/*MOVIL*/
+
+@media (max-width: 768px){
+    .talent_form{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0;
+        width: 100%;
+    }
+}

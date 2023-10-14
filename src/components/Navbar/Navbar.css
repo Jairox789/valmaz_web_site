@@ -1,0 +1,46 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-nav-background: #FFFFFF;
+    --color-nav-text: #000000;
+  }
+  
+  /* Estilos para el tema oscuro */
+  html[data-theme="dark"] {
+    --color-nav-background: #000000;
+    --color-nav-text: #DDDDDD;
+  }
+
+nav{
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    background: var(--color-nav-background);
+    color: var(--color-nav-text);
+}
+
+nav img{
+    width: 180px;
+}
+
+.nav_logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.nav_hamburguer_menu{
+    display: flex;
+    align-items: center;
+}
+
+.nav_hamburguer_menu svg{
+    cursor: pointer;
+    height: 40px;
+    width: 28px;
+    margin-right: 10px;
+}
+
+.nav_hamburguer_menu span{
+    margin-right: 30px;
+}

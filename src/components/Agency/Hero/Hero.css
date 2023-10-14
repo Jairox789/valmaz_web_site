@@ -1,0 +1,50 @@
+.agency_hero{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.agency_hero div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 46px;
+    width: 36vw;
+}
+
+.agency_hero div:nth-child(1) h1{
+    text-align: initial;
+}
+
+.agency_hero div:nth-child(1) span{
+    text-align: justify;
+}
+
+.agency_hero div:nth-child(2) img{
+    width: 55vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+/*MOVIL*/
+@media (max-width: 900px){
+    .agency_hero div:nth-child(2) img {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px){
+    .agency_hero div:nth-child(1){
+        position: absolute;
+        margin-left: 70px;
+        width: 60%;
+    }
+    .agency_hero_content_title , .agency_hero_content_body{
+        color: #000;
+    }
+    .agency_hero div:nth-child(2) img {
+        width: 100%;
+        height: 90vh;
+    }
+}

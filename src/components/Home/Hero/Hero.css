@@ -1,0 +1,26 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-hero-text: #000000;
+}
+
+  /* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-hero-text: #DDDDDD;
+}
+
+.home_hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-hero-text);
+    height: 100vh;
+    justify-content: center;
+}
+
+.home_hero span{
+    width: 60%;
+}
+
+.home_hero img{
+    width: 70%;
+}

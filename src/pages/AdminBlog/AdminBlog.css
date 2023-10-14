@@ -1,0 +1,10 @@
+.admin_blog{
+    align-items: flex-start;
+}
+
+.admin_blog_container{
+    display: flex;
+    justify-content: space-around;
+    width: 81%;
+    flex-wrap: wrap;
+}

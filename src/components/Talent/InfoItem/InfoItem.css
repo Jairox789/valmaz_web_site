@@ -1,0 +1,16 @@
+.info_item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info_item_title{
+    display: flex;
+    align-items: center;
+}
+
+.info_item_title svg{
+    margin-right: 8px;
+    height: 30px;
+    width: 30px;
+}

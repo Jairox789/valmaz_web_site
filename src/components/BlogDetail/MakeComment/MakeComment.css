@@ -1,0 +1,28 @@
+.make_comment .comment_form{
+    display: flex;
+    width: 80vw;
+    justify-content: space-around;
+}
+
+.make_comment_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.make_comment_info input[type=submit]{
+    width: 20%;
+    margin-top: 0;
+}
+
+.make_comment input{
+    width: 80%;
+    margin-bottom: 16px;
+}
+
+.comment_form textarea{
+    width: 40%;
+    height: 21vh;
+}
+

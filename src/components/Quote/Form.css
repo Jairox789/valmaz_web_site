@@ -1,0 +1,84 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-quote-form-background: #DDDDDD;
+    --color-quote-form: #ffffff;
+    --color-quote-info-background: #BBBBBB;
+    --color-quote-text: #000000;
+}
+
+/* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-quote-form-background: #303030;
+    --color-quote-form: #303030;
+    --color-quote-info-background: #BBBBBB;
+    --color-quote-text: #FFFFFF;
+}
+
+.quote_form{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 60px;
+    margin-bottom: 24px;
+}
+
+.quote_form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    background: var(--color-quote-form-background);
+}
+
+.quote_form form select{
+    width: 74%;
+    margin-bottom: 8px;
+    background-color: var(--color-quote-form);
+    color: var(--color-quote-text);
+}
+
+.quote_form input[type=text]{
+    width: 80%;
+    margin-bottom: 8px;
+    background-color: var(--color-quote-form);
+}
+
+.quote_form input::placeholder{
+    color: var(--color-quote-text);
+}
+
+.quote_form input[type=file]{
+    width: 80%;
+}
+
+.quote_form label{
+    color: var(--color-quote-text);
+}
+
+.quote_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    background: var(--color-quote-info-background);
+}
+
+.quote_info p{
+    margin-top: 0;
+    margin-bottom: 4px;
+    color: #000000;
+}
+
+/*MOVIL*/
+
+@media (max-width: 768px){
+    .quote_form{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0;
+        width: 100%;
+    }
+}

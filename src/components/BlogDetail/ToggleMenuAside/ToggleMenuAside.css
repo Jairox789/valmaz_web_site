@@ -1,0 +1,15 @@
+.toggle_menu_aside{
+    background: #E4E4DD;
+    border-radius: 35px 0px 0px 35px;
+    padding: 10px 0px 10px 10px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.toggle_menu_aside svg{
+    width: 35px;
+    height: 35px;
+}

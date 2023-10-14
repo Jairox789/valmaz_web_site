@@ -1,0 +1,43 @@
+.agency_about{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.agency_about div:nth-child(1) img{
+    width: 50vw;
+}
+
+.agency_about div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+}
+
+.toggle_info_item_container{
+    margin-top: 32px;
+}
+
+/*MOVIL*/
+@media (max-width: 900px){
+    .agency_about div:nth-child(1) img{
+        width: 35vw;
+    }
+}
+
+@media (max-width: 768px){
+    .agency_about div:nth-child(1) img{
+        width: 50vw;
+    }
+
+    .agency_about div:nth-child(2){
+        width: 70%;
+    }
+
+    .agency_about {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

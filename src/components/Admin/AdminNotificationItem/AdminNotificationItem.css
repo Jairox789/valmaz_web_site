@@ -1,0 +1,31 @@
+.admin_notification_item{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-bottom: 1px solid #BBBBBB;
+    margin-top: 12px;
+}
+
+.admin_notification_info{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 12px;
+}
+
+.admin_notification_info svg{
+    width: 30px;
+    height: 30px;
+}
+
+.admin_notification_info button{
+    border: 0;
+    background: #545454;
+    color: #FFF;
+    border-radius: 16px;
+    padding: 6px 24px;
+    
+}
+
+.admin_notification_info_options{
+    display: flex;
+}

@@ -1,0 +1,27 @@
+.navbar_admin{
+    align-items: center;
+    width: 80vw;
+    height: 70px;
+    right: 0;
+    border-bottom: 1px solid #F81B1B;
+}
+
+.navbar_admin_info{
+    display: flex;
+    align-items: center;
+}
+
+.navbar_admin_info_user{
+    text-align: center;
+    margin-right: 12px;
+}
+
+.navbar_admin_info_user p{
+    margin: 0;
+    color: #000000;
+}
+
+.navbar_admin_info svg{
+    width: 40px;
+    height: 40px;
+}

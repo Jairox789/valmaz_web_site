@@ -1,0 +1,39 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-agency-background: #E4E4DD;
+    --color-agency-title:#000000;
+    --color-agency-text: #000000;
+}
+
+/* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-agency-background: #1B1B1B;
+    --color-agency-title:#BBBBBB;
+    --color-agency-text: #BBBBBB;
+}
+
+.main_agency{
+    background: var(--color-agency-background);
+}
+
+.main_agency h1,h2{
+    color: var(--color-agency-title);
+}
+
+.main_agency span,p{
+    color: var(--color-agency-text);
+}
+
+.testimony_info{
+    text-align: center;
+}
+
+.testimony_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.testimony_container div{
+    margin-bottom: 30px;
+}

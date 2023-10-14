@@ -1,0 +1,33 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-theme-togle-background: #E0E1E6;
+    --color-theme-togle-text: #000000;
+  }
+  
+  /* Estilos para el tema oscuro */
+  html[data-theme="dark"] {
+    --color-theme-togle-background: #131313;
+    --color-theme-togle-text: #FFFFFF;
+  }
+
+.theme_toggle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    height: 130px;
+    border-radius: 30px;
+    background: var(--color-theme-togle-background);
+    color: var(--color-theme-togle-text);
+}
+
+.theme_toggle svg{
+    cursor: pointer;
+    width: 50px;
+    height: 46px;
+}
+
+.theme_toggle span{
+    margin-top: 30px;
+    transform: rotate(90deg);
+}

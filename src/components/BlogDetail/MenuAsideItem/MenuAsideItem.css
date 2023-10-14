@@ -1,0 +1,8 @@
+.menu_aside_item{
+    border-bottom: 1px solid #c7c7c7;
+    width: 90%;
+}
+
+.menu_aside_item a{
+    text-decoration: none;
+}

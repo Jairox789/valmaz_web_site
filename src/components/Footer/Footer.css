@@ -1,0 +1,127 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-footer-background: #F9F9F9;
+    --color-footer-title:#666666;
+    --color-footer-text: #BBBBBB;
+    --color-footer-border:#c7c7c7;
+  }
+  
+  /* Estilos para el tema oscuro */
+  html[data-theme="dark"] {
+    --color-footer-background: #131313;
+    --color-footer-title:#FFFFFF;
+    --color-footer-text: #EBEBEB;
+    --color-footer-border:#BBBBBB;
+  }
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid var(--color-footer-border);
+    background:var(--color-footer-background);
+}
+
+footer img{
+    width: 180px;
+}
+
+footer h3{
+    font-size: 36px;
+    color: var(--color-footer-title);
+}
+
+footer a{
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--color-footer-text);
+}
+
+footer p{
+    padding-top: 12px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid var(--color-footer-border);
+}
+
+.footer_info{
+    display: flex;
+}
+
+.footer_info_medias{
+    display: flex;
+    margin-right: 34px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social_media_icon_container{
+    display: flex;
+}
+
+.social_media_circle {
+    margin-left: -12px;
+}
+
+.footer_info_navegation, .footer_info_contact, .footer_info_address{
+    display: flex;
+    flex-direction: column;
+    margin-right: 44px;
+}
+
+.footer_info_address{
+    margin-right: 0px;
+    width: 320px;
+}
+
+.footer_info_address span{
+    font-size: 24px;
+    color: var(--color-footer-text);
+}
+
+/*MOVIL*/
+
+@media (max-width: 1070px){
+    footer h3{
+        font-size: 28px;
+    }
+    footer a,span{
+        font-size: 20px;
+    }
+    .footer_info_address span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 980px){
+    footer h3{
+        font-size: 24px;
+    }
+    footer a,span{
+        font-size: 18px;
+    }
+    .footer_info_address span {
+        font-size: 18px;
+    }
+    .footer_info_navegation, .footer_info_contact, .footer_info_address {
+        margin-right: 26px;
+    }
+    .footer_info_address{
+        margin: 0;
+    }
+}
+    @media (max-width: 912px){
+        .footer_info{
+            flex-direction: column;
+        }
+        .footer_info_medias{
+            margin-right: 0;
+            align-items: flex-start;
+        }
+        .social_media_circle {
+            margin-left: 0;
+            margin-right: 12px;
+        }
+    }

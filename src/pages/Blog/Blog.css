@@ -1,0 +1,34 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-blog-background: #E4E4DD;
+    --color-blog-text:#000000;
+
+}
+
+  /* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-blog-background: #1B1B1B;
+    --color-blog-text:#F9F9F9;
+}
+
+.main_blog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-blog-background);
+}
+
+.main_blog .main_blog_title{
+    color: var(--color-blog-text) !important;
+}
+
+.blog_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.blog_card{
+    margin-bottom: 24px;
+    margin-right: 24px;
+}

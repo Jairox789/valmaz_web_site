@@ -1,0 +1,49 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-pointer: #000000;
+}
+
+/* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-pointer: #BBBBBB;
+}
+
+.toggle_info_item{
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.toggle_info_item div:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+
+.toggle_info_item div:nth-child(1) span{
+    margin-right: 16px;
+}
+
+.toggle_info_item div:nth-child(1) svg{
+    cursor: pointer;
+    color: var(--color-pointer);
+}
+
+.toggle_info_item_number{
+    padding: 6px 14px;
+    border-radius: 36px;
+    background: #A56433;
+    color: #fff !important;
+}
+
+.toggle_info_item hr{
+    border: 0;
+    display: block;
+    width: 100%;
+    background-color: #000000;
+    height: 1px;
+}
+
+.toggle_info_item_content{
+    text-align: justify !important;
+    width: 100% !important;
+}

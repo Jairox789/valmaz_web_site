@@ -1,0 +1,51 @@
+*{
+    box-sizing: unset !important;
+}
+
+body{
+    margin: 0;
+}
+
+p,span,ul,li{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Archivo Narrow', sans-serif !important;
+}
+
+main{
+    padding-top: 10vh;
+}
+
+.btn_call_to_action{
+    margin-top: 36px;
+    background-color: #DDDDDD;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 36px;
+    border-radius: 39px;
+    border: 0;
+}
+
+.btn_call_to_action_v2{
+    margin-top: 36px;
+    background-color: #F9F9F9;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 36px;
+    border-radius: 39px;
+    border: 0;
+}
+
+.main_admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20vw;
+    padding-top: 70px;
+}
+
+.main_admin h1 {
+    color: #000 !important;
+}

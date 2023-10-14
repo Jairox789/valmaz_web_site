@@ -1,0 +1,16 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-social-text: #000000;
+  }
+  
+  /* Estilos para el tema oscuro */
+  html[data-theme="dark"] {
+    --color-social-text: #808080;
+  }
+
+.social_media_aside svg{
+    height: 35px;
+    width: 35px;
+    margin-bottom: 8px;
+    color: var(--color-social-text);
+}
