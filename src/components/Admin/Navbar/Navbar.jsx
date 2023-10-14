@@ -8,7 +8,7 @@ export const Navbar = () => {
     <nav className="navbar_admin">
       <Link to={"/"}>
         {" "}
-        <img src="/src/assets/logo_light.png" />
+        <img src="https://i.ibb.co/dKkCKvN/logo-light.png" />
       </Link>
       <div className="navbar_admin_info">
         <div className="navbar_admin_info_user">

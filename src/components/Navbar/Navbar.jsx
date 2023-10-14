@@ -7,8 +7,8 @@ export const Navbar = ({ toggleMenu }) => {
   //LOGICA
   const { themeToggle } = useTheme();
   const logo = themeToggle
-    ? "/src/assets/logo_dark.png"
-    : "/src/assets/logo_light.png";
+    ? "https://i.ibb.co/6gD2t0y/logo-dark.png"
+    : "https://i.ibb.co/dKkCKvN/logo-light.png";
   return (
     <nav>
       <div className="nav_logo">

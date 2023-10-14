@@ -13,12 +13,12 @@ export const Portfolios = () => {
     {
       id: 1,
       slug: "proyecto-1",
-      mainImg: "/src/assets/muestras/36.JPG",
+      mainImg: "https://i.ibb.co/tLZhSDz/36.jpg",
       imgs: [
-        "/src/assets/muestras/-2770631597145984701_IMG_9996.JPG",
-        "/src/assets/muestras/20.JPG",
-        "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
-        "/src/assets/muestras/IMG_0850.JPG",
+        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
+        "https://i.ibb.co/XFQ9XHc/20.jpg",
+        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
+        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
       ],
       title: "Proyecto 1 de ejemplo",
       description:
@@ -30,10 +30,10 @@ export const Portfolios = () => {
       slug: "proyecto-2",
       mainImg: "/src/assets/muestras/IMG_2658.JPG",
       imgs: [
-        "/src/assets/muestras/-2770631597145984701_IMG_9996.JPG",
-        "/src/assets/muestras/20.JPG",
-        "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
-        "/src/assets/muestras/IMG_0850.JPG",
+        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
+        "https://i.ibb.co/XFQ9XHc/20.jpg",
+        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
+        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
       ],
       title: "Proyecto 2 de ejemplo",
       description:
@@ -46,10 +46,10 @@ export const Portfolios = () => {
       slug: "proyecto-3",
       mainImg: "/src/assets/muestras/IMG_0021.JPG",
       imgs: [
-        "/src/assets/muestras/-2770631597145984701_IMG_9996.JPG",
-        "/src/assets/muestras/20.JPG",
-        "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
-        "/src/assets/muestras/IMG_0850.JPG",
+        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
+        "https://i.ibb.co/XFQ9XHc/20.jpg",
+        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
+        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
       ],
       title: "Proyecto 3 de ejemplo",
       description:
@@ -61,10 +61,10 @@ export const Portfolios = () => {
       slug: "proyecto-4",
       mainImg: "/src/assets/muestras/1 2.jpg",
       imgs: [
-        "/src/assets/muestras/-2770631597145984701_IMG_9996.JPG",
-        "/src/assets/muestras/20.JPG",
-        "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
-        "/src/assets/muestras/IMG_0850.JPG",
+        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
+        "https://i.ibb.co/XFQ9XHc/20.jpg",
+        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
+        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
       ],
       title: "Proyecto 4 de ejemplo",
       description:
@@ -75,12 +75,12 @@ export const Portfolios = () => {
     {
       id: 5,
       slug: "proyecto-5",
-      mainImg: "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
+      mainImg: "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
       imgs: [
-        "/src/assets/muestras/-2770631597145984701_IMG_9996.JPG",
-        "/src/assets/muestras/20.JPG",
-        "/src/assets/muestras/20210618 AXL DC IMG_6400-HDR.JPEG",
-        "/src/assets/muestras/IMG_0850.JPG",
+        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
+        "https://i.ibb.co/XFQ9XHc/20.jpg",
+        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
+        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
       ],
       title: "Proyecto 5 de ejemplo",
       description:
