@@ -15,11 +15,13 @@ html[data-theme="dark"] {
     background: var(--color-services-details-background);
     color: var(--color-services-details-text);
     padding-bottom: 140px;
+    height: 90vh;
+    position: relative;
 }
 
 .main_services_detail img{
     object-fit: cover;
-    height: 89vh;
+    height: 100%;
     width: 100%;
 }
 

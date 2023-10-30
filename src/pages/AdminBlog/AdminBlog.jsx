@@ -1,87 +1,96 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AdminAddElement } from "../../components/Admin/AdminAddElement/AdminAddElement";
 import "./AdminBlog.css";
 import { BlogCard } from "../../components/Blog/BlogCard/BlogCard";
 import { AdminNotifications } from "../../components/Admin/AdminNotifications/AdminNotifications";
+import { useApiContext } from "../../context/ApiContext";
+import { Modal } from "../../components/Modal/Modal";
+import { Category } from "../../components/Admin/ManageBlog/Category/Category";
 
 export const AdminBlog = () => {
   //LOGICA
+  const [blogInfo, setBlogInfo] = useState([]);
+  const { apiUrl } = useApiContext();
+  const [infoNotificationBlog, setInfoNotificationBlog] = useState([]);
+
+  const getBlogsInfo = async () => {
+    fetch(apiUrl + "/blogs/")
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogInfo(data);
+      });
+  };
+
+  const getNotificationBlogs = async () => {
+    fetch(apiUrl + "/blogs_notification_comments/")
+      .then((response) => response.json())
+      .then((data) => {
+        setInfoNotificationBlog(data);
+      });
+  };
+
+  const deleteBlogs = (id) => {
+    const formData = new FormData();
+
+    fetch(apiUrl + "/blogs/" + id, {
+      method: "DELETE",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Actualiza el estado con el nombre de la imagen
+        getBlogsInfo();
+      })
+      .catch((error) => {
+        console.error("Error uploading image:", error);
+      });
+  };
 
   useEffect(() => {
-    // Desplaza la página al principio (0, 0)
+    getBlogsInfo();
+    getNotificationBlogs();
     window.scrollTo(0, 0);
   }, []);
 
-  const blogInfo = [
-    {
-      id: 1,
-      title: "Características más importantes de un sitio web",
-      category: "Marketing",
-      slug: "caracteristicas-mas-importantes-de-un-sitio-web",
-      mainImg:
-        "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg",
-      summary: "Summary of blog 1",
-      date: "2022-01-01",
-      author: "Jairo Ortega",
-      comments: 3,
-    },
-    {
-      id: 2,
-      title: "Tendencias del marketing actuales",
-      category: "Marketing",
-      slug: "tendencias-del-marketing-actuales",
-      mainImg:
-        "http://valmaz.com/wp-content/uploads/2022/05/mobile-notification-icons-between-man-and-woman-using-cell-phone-768x512.jpg",
-      summary: "Summary of blog 2",
-      date: "2022-01-02",
-      author: "John Doe",
-      comments: 8,
-    },
-    {
-      id: 3,
-      title: "Blog Title 3",
-      category: "Marketing",
-      slug: "blog-title-3",
-      mainImg:
-        "https://recursosmarketing.net/wp-content/uploads/2022/07/blog-como-recurso-de-marketing.png",
-      summary: "Summary of blog 3",
-      date: "2022-01-03",
-      author: "John Doe",
-      comments: 9,
-    },
-  ];
+  const [modalStateDelete, setModalStateDelete] = useState(false);
+  const [modalStateCategories, setModalStateCategories] = useState(false);
 
-  const infoNotificationBlog = [
-    {
-      id: 1,
-      user: "José Zúñiga",
-      content: "que buen blog, recomendado", //CAMBIAR POR ID
-    },
-    {
-      id: 2,
-      user: "Jorge Tovar",
-      content: "Nunca habia leido algo asi, like", //CAMBIAR POR ID
-    },
-    {
-      id: 3,
-      user: "Alán Vázquez",
-      content: "Gracias a ti aprendi la importancia de las redes sociales", //CAMBIAR POR ID
-    },
-    {
-      id: 4,
-      user: "Josue Rocha",
-      content: "Me suscribo, tienes un nuevo seguidor", //CAMBIAR POR ID
-    },
-  ];
+  const [blogsInfoTemp, setBlogsInfoTemp] = useState({});
+
+  const openModalDelete = () => {
+    setModalStateDelete(true);
+  };
+
+  const openModalCategories = () => {
+    setModalStateCategories(true);
+  };
+
+  const handleBlogsInfoTemp = (service) => {
+    setBlogsInfoTemp(service);
+  };
 
   return (
     <main className="main_admin admin_blog">
-      <AdminAddElement title={"Blogs"} toAdd={"Añadir un nuevo blog"} />
+      <div className="admin_blog_add_element">
+        <AdminAddElement
+          title={"Blogs"}
+          toAdd={"Añadir un nuevo blog"}
+          link={"/admin/blog/crear/"}
+        />
+
+        <AdminAddElement
+          title={"Categorías"}
+          toAdd={"Añadir una nueva categoría"}
+          button={true}
+          open={openModalCategories}
+        />
+      </div>
 
       <AdminNotifications
         textPending={"Comentarios pendientes"}
         infoNotification={infoNotificationBlog}
         options={true}
+        update={getNotificationBlogs}
       />
 
       <div className="admin_blog_container">
@@ -93,13 +102,56 @@ export const AdminBlog = () => {
             author={blog.author}
             date={blog.date}
             comments={blog.comments}
-            category={blog.category}
+            category={blog.category.name}
             summary={blog.summary}
             slug={blog.slug}
             editMode={true}
+            id={blog.id}
+            openModalDelete={openModalDelete}
+            handleBlogsInfoTemp={handleBlogsInfoTemp}
           />
         ))}
       </div>
+
+      <Modal
+        modalState={modalStateDelete}
+        setModalState={setModalStateDelete}
+        tabTitle={"Eliminar servicio"}
+      >
+        <p>
+          ¿Estás seguro que deseas eliminar el blog de{" "}
+          <b>{blogsInfoTemp.title}</b>?
+        </p>
+
+        <div className="btn_container">
+          <button
+            onClick={() => {
+              deleteBlogs(blogsInfoTemp.id);
+              getBlogsInfo();
+              setModalStateDelete(false);
+            }}
+            className="btn btn-danger"
+          >
+            Confirmar
+          </button>
+          <button
+            onClick={() => {
+              setModalStateDelete(false);
+            }}
+            className="btn btn-primary"
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
+
+      <Modal
+        modalState={modalStateCategories}
+        setModalState={setModalStateCategories}
+        tabTitle={"Añadir categorías para los blogs"}
+      >
+        <Category />
+      </Modal>
     </main>
   );
 };

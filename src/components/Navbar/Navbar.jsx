@@ -6,9 +6,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 export const Navbar = ({ toggleMenu }) => {
   //LOGICA
   const { themeToggle } = useTheme();
-  const logo = themeToggle
-    ? "https://i.ibb.co/6gD2t0y/logo-dark.png"
-    : "https://i.ibb.co/dKkCKvN/logo-light.png";
+  const logo =
+    themeToggle === "dark"
+      ? "/src/assets/logo_dark.png"
+      : "/src/assets/logo_light.png";
   return (
     <nav>
       <div className="nav_logo">

@@ -13,7 +13,7 @@ export const Hero = () => {
           Soluciones confiables y probadas que cumplen con las prácticas y
           estándares internacionales de la industria
         </span>
-        <Link className="btn_call_to_action_v2" to={"/"}>
+        <Link className="btn_call_to_action_v2" to={"/cotizar"}>
           Empezar ahora
         </Link>
       </div>

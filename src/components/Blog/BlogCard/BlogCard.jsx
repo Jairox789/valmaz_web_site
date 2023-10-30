@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { MdDeleteOutline } from "react-icons/md";
 
 export const BlogCard = ({
+  id,
   img,
   title,
   author,
@@ -15,6 +16,8 @@ export const BlogCard = ({
   summary,
   slug,
   editMode = false,
+  openModalDelete,
+  handleBlogsInfoTemp,
 }) => {
   //LOGICA
   return (
@@ -44,8 +47,16 @@ export const BlogCard = ({
 
       {editMode ? (
         <div className="admin_blog_manage">
-          <FaEdit />
-          <MdDeleteOutline />
+          <Link to={"/admin/blog/editar/" + id}>
+            <FaEdit />
+          </Link>
+
+          <MdDeleteOutline
+            onClick={() => {
+              openModalDelete();
+              handleBlogsInfoTemp({ id: id, title: title });
+            }}
+          />
         </div>
       ) : (
         ""

@@ -50,7 +50,7 @@ export const Carousel = ({ imgs }) => {
           >
             {imgs.map((img, index) => (
               <SwiperSlide key={index}>
-                <Card img={img} />
+                <Card img={img.url} />
               </SwiperSlide>
             ))}
           </Swiper>

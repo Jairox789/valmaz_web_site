@@ -1,0 +1,16 @@
+.create_category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create_category_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create_category_form input{
+    margin-top: 12px;
+}

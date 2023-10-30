@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Footer } from "../../components/Footer/Footer";
 import { Hero } from "../../components/Home/Hero/Hero";
-import { Porfolios } from "../../components/Home/Portfolios/Portfolios";
 import { Services } from "../../components/Home/Services/Services";
 import "./Home.css";
+import { Portfolios } from "../../components/Home/Portfolios/Portfolios";
 
 export const Home = () => {
   //LOGICA
@@ -15,7 +15,7 @@ export const Home = () => {
     <>
       <main className="main_home">
         <Hero />
-        <Porfolios />
+        <Portfolios />
         <Services />
       </main>
       <Footer />

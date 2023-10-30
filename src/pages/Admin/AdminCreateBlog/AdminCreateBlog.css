@@ -1,0 +1,13 @@
+.admin_create_services{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin_create_services_form{
+    width: 35%;
+}
+
+.admin_create_services_preview{
+    width: 50%;
+}

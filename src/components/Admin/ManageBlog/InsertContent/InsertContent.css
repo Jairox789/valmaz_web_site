@@ -1,0 +1,15 @@
+.insert_content_container {
+    display: flex;
+    align-items: center;
+}
+
+.insert_content_container svg{
+    cursor: pointer;
+    margin-left: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.insert_content{
+    margin-top: 12px;
+}

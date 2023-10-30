@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Comment } from "../Comment/Comment";
 import { MakeComment } from "../MakeComment/MakeComment";
 import "./CommentsSection.css";
 
-export const CommentsSection = ({ commentsInfo }) => {
+export const CommentsSection = ({ idBlog, commentsInfo }) => {
   //LOGICA
+  const [replyToComment, setReplyToComment] = useState(null);
+
+  const handleReply = (commentName) => {
+    setReplyToComment(commentName);
+  };
+
   const commentsState = commentsInfo.length
     ? "Comentarios (" + commentsInfo.length + ")"
     : "Sé el primero en comentar";
@@ -18,9 +24,14 @@ export const CommentsSection = ({ commentsInfo }) => {
           name={comment.name}
           date={comment.date}
           comment={comment.comment}
+          onReply={() => handleReply(comment.name)}
         />
       ))}
-      <MakeComment />
+      <MakeComment
+        idBlog={idBlog}
+        replyTo={replyToComment}
+        setReplyTo={setReplyToComment}
+      />
     </div>
   );
 };

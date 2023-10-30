@@ -26,6 +26,7 @@ html[data-theme="dark"] {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .blog_card{

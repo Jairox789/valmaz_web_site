@@ -1,69 +1,72 @@
 import "./AdminAgency.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TestimonyCard } from "../../components/Agency/TestimonyCard/TestimonyCard";
 import { AdminAddElement } from "../../components/Admin/AdminAddElement/AdminAddElement";
+import { useApiContext } from "../../context/ApiContext";
+import { Modal } from "../../components/Modal/Modal";
 
 export const AdminAgency = () => {
   //LOGICA
+  const [modalStateDelete, setModalStateDelete] = useState(false);
 
-  const testimonys = [
-    {
-      img: "https://media.licdn.com/dms/image/C4E03AQHRNzjteHSlRw/profile-displayphoto-shrink_800_800/0/1528047318157?e=1701907200&v=beta&t=Pa9FztH-uSY_91qat2fbItRgVcJRrvQcIeohuOXZYZ4",
-      social: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
-        website: "https://valmaz.com",
-        twitter: "https://instagram.com",
-      },
-    },
-    {
-      img: "https://images.pexels.com/photos/3394657/pexels-photo-3394657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      social: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
-        website: "https://valmaz.com",
-        twitter: "https://instagram.com",
-      },
-    },
-    {
-      img: "https://t1.uc.ltmcdn.com/es/posts/1/8/4/como_cuidar_la_barba_41481_600.webp",
-      social: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
-        website: "https://valmaz.com",
-        twitter: "https://instagram.com",
-      },
-    },
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1RQSMx2hlkQAV-N8h5LVbLY-imS_H84Yfr-pibnwsREdUhaIW",
-      social: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
-        website: "https://valmaz.com",
-        twitter: "https://instagram.com",
-      },
-    },
-  ];
+  const [testimonysInfoTemp, setTestimonysInfoTemp] = useState({});
+
+  const [testimonys, setTestimonys] = useState([]);
+
+  const openModalDelete = () => {
+    setModalStateDelete(true);
+  };
+
+  const handleTestimonysInfoTemp = (service) => {
+    setTestimonysInfoTemp(service);
+  };
+
+  const { apiUrl } = useApiContext();
+
+  const getTestimonials = async () => {
+    fetch(apiUrl + "/testimonials/")
+      .then((response) => response.json())
+      .then((data) => {
+        setTestimonys(data);
+      });
+  };
+
+  const deleteTestimolias = (id) => {
+    const formData = new FormData();
+
+    fetch(apiUrl + "/testimonials/" + id, {
+      method: "DELETE",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Actualiza el estado con el nombre de la imagen
+        getTestimonials();
+      })
+      .catch((error) => {
+        console.error("Error uploading image:", error);
+      });
+  };
 
   useEffect(() => {
-    // Desplaza la página al principio (0, 0)
+    getTestimonials();
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <main className="main_admin admin_agency">
       <AdminAddElement
         title={"Testimonios"}
         toAdd={"Añadir un nuevo testimonio"}
+        link={"/admin/agencia/crear/"}
       />
 
       <div className="testimony_container">
         {testimonys.map((testimony, index) => (
           <TestimonyCard
             key={index}
+            id={testimony.id}
+            name={testimony.name}
             img={testimony.img}
             facebook={testimony.social.facebook}
             instagram={testimony.social.instagram}
@@ -71,9 +74,42 @@ export const AdminAgency = () => {
             website={testimony.social.website}
             twitter={testimony.social.twitter}
             editMode={true}
+            openModalDelete={openModalDelete}
+            handleTestimonysInfoTemp={handleTestimonysInfoTemp}
           />
         ))}
       </div>
+
+      <Modal
+        modalState={modalStateDelete}
+        setModalState={setModalStateDelete}
+        tabTitle={"Eliminar testimonio"}
+      >
+        <p>
+          ¿Estás seguro que deseas eliminar el testimonio de{" "}
+          <b>{testimonysInfoTemp.name}</b>?
+        </p>
+
+        <div className="btn_container">
+          <button
+            onClick={() => {
+              deleteTestimolias(testimonysInfoTemp.id);
+              setModalStateDelete(false);
+            }}
+            className="btn btn-danger"
+          >
+            Confirmar
+          </button>
+          <button
+            onClick={() => {
+              setModalStateDelete(false);
+            }}
+            className="btn btn-primary"
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
     </main>
   );
 };

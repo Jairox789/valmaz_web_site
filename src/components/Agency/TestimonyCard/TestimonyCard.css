@@ -12,6 +12,13 @@
     object-fit: cover;
 }
 
+.testimony_card_name{
+    margin: 0;
+    position: absolute;
+    bottom: 0%;
+    color: white;
+}
+
 .testimony_card_social{
     display: flex;
     width: 100%;

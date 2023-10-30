@@ -27,11 +27,12 @@ export const SliderOne = ({ info }) => {
             </div>
             <div className="slider_one_info">
               <h3>{project.title}</h3>
-              <span>{project.service}</span>
+              <span>{project.service.title}</span>
             </div>
             <div className="slider_one_btn_container">
-              <Link to={"/proyectos/" + project.slug}>
-                <BsChevronRight /> Ver caso
+              <Link to={"/proyectos/" + project.slug} className="iconLink">
+                <BsChevronRight />
+                Ver caso
               </Link>
             </div>
           </motion.div>

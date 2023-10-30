@@ -26,3 +26,13 @@
     height: 21vh;
 }
 
+.make_comment_reply{
+    display: flex;
+}
+
+.make_comment_reply svg{
+    cursor: pointer;
+    margin-left: 12px;
+    width: 25px;
+    height: 25px;
+}

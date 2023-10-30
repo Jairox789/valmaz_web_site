@@ -22,6 +22,22 @@ html[data-theme="light"] {
     display: flex;
     cursor: grab;
 }
+.iconLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 36px;
+    border-radius: 39px;
+    background-color: var(--color-slider-one-button);
+    color: #000000;
+    transition: transform 0.3s ease; /* Agrega una transición suave a la escala */
+    /* Estilo adicional si es necesario */
+    font-weight: bold;
+}
+
+.iconLink:hover {
+    transform: scale(1.1); /* Aplica un efecto de acercamiento del 10% al hacer hover */
+}
 
 .slider_one_container .item{
     width: 100%;

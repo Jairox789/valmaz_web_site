@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 export const SliderTwo = ({
   info,
   adminMode = false,
-  openModalEdit,
   openModalDelete,
   handleServicesInfoTemp,
 }) => {
@@ -36,8 +35,16 @@ export const SliderTwo = ({
 
             {adminMode ? (
               <div className="slider_two_info_admin">
-                <FaEdit onClick={openModalEdit} />
-                <MdDeleteOutline onClick={openModalDelete} />
+                <Link to={"/admin/servicios/editar/" + service.id}>
+                  <FaEdit />
+                </Link>
+
+                <MdDeleteOutline
+                  onClick={() => {
+                    openModalDelete();
+                    handleServicesInfoTemp(service);
+                  }}
+                />
               </div>
             ) : (
               ""

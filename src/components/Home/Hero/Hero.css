@@ -24,3 +24,7 @@ html[data-theme="dark"] {
 .home_hero img{
     width: 70%;
 }
+
+.home_hero_title{
+    color: var(--color-hero-text) !important;
+}

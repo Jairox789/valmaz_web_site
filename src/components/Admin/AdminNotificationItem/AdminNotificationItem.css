@@ -28,4 +28,5 @@
 
 .admin_notification_info_options{
     display: flex;
+    cursor: pointer;
 }

@@ -2,77 +2,154 @@ import "./AdminTalent.css";
 import { AdminTalentCard } from "../../components/Admin/AdminTalentCard/AdminTalentCard";
 import { AdminNotifications } from "../../components/Admin/AdminNotifications/AdminNotifications";
 import { AdminAddElement } from "../../components/Admin/AdminAddElement/AdminAddElement";
+import { useEffect, useState } from "react";
+import { useApiContext } from "../../context/ApiContext";
+import { Modal } from "../../components/Modal/Modal";
+import { ViewTalent } from "../../components/Admin/ManageTalent/ViewTalent/ViewTalent";
 
 export const AdminTalent = () => {
   //LOGICA
-  const talentInfo = [
-    {
-      id: 1,
-      name: "Diseñador web",
-      img: "https://www.comunicare.es/wp-content/uploads/2021/08/disenador-web.jpg",
-      state: true,
-    },
-    {
-      id: 2,
-      name: "Fotografo",
-      img: "https://mott.pe/noticias/wp-content/uploads/2018/03/10-tips-para-saber-c%C3%B3mo-ser-un-buen-fot%C3%B3grafo-profesional-portada.jpg",
-      state: false,
-    },
-    {
-      id: 3,
-      name: "Practicante",
-      img: "https://www.managementjournal.net/images/joomlart/article/7e72c9265cdf790f140d9aba9b4800ff.jpg",
-      state: true,
-    },
-  ];
+  const [vacantsInfo, setVacantsInfo] = useState([]);
+  const [infoNotificationTalent, setInfoNotificationTalent] = useState([]);
 
-  const infoNotificationTalent = [
-    {
-      id: 1,
-      user: "José Zúñiga",
-      content: "Diseñador web", //CAMBIAR POR ID
-    },
-    {
-      id: 2,
-      user: "Jorge Tovar",
-      content: "Fotografo", //CAMBIAR POR ID
-    },
-    {
-      id: 3,
-      user: "Alán Vázquez",
-      content: "Practicante", //CAMBIAR POR ID
-    },
-    {
-      id: 4,
-      user: "Josue Rocha",
-      content: "Practicante", //CAMBIAR POR ID
-    },
-    {
-      id: 5,
-      user: "Misael Aguilar",
-      content: "Practicante", //CAMBIAR POR ID
-    },
-  ];
+  const { apiUrl } = useApiContext();
+
+  const getVacantsInfo = async () => {
+    fetch(apiUrl + "/vacants_admin/")
+      .then((response) => response.json())
+      .then((data) => {
+        setVacantsInfo(data);
+      });
+  };
+
+  const getNotificationTalent = async () => {
+    fetch(apiUrl + "/talents_notify/")
+      .then((response) => response.json())
+      .then((data) => {
+        setInfoNotificationTalent(data);
+      });
+  };
+
+  const deleteVacant = (id) => {
+    const formData = new FormData();
+
+    fetch(apiUrl + "/vacants/" + id, {
+      method: "DELETE",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Actualiza el estado con el nombre de la imagen
+        getVacantsInfo();
+        //getNotificationTalent();
+      })
+      .catch((error) => {
+        console.error("Error uploading image:", error);
+      });
+  };
+
+  const [modalStateDelete, setModalStateDelete] = useState(false);
+
+  const [vacantsInfoTemp, setVacantsInfoTemp] = useState({});
+
+  const [modalStateViewTalent, setModalStateViewTalent] = useState(false);
+
+  const [talentInfoTemp, setTalentInfoTemp] = useState({});
+
+  const openModalDelete = () => {
+    setModalStateDelete(true);
+  };
+
+  const handleVacantsInfoTemp = (service) => {
+    setVacantsInfoTemp(service);
+  };
+
+  const openModalView = () => {
+    setModalStateViewTalent(true);
+  };
+
+  const handleTalentInfoTemp = (service) => {
+    setTalentInfoTemp(service);
+  };
+
+  useEffect(() => {
+    getVacantsInfo();
+    getNotificationTalent();
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="main_admin admin_talent">
-      <AdminAddElement title={"Talento"} toAdd={"Añadir una nueva vacante"} />
+      <AdminAddElement
+        title={"Talento"}
+        toAdd={"Añadir una nueva vacante"}
+        link={"/admin/talento/crear/"}
+      />
 
       <AdminNotifications
         textPending={"Solicitudes pendientes"}
         infoNotification={infoNotificationTalent}
+        openModal={openModalView}
+        handleTemp={handleTalentInfoTemp}
       />
 
       <div className="admin_talent_container">
-        {talentInfo.map((talent, index) => (
+        {vacantsInfo.map((talent, index) => (
           <AdminTalentCard
             key={index}
+            id={talent.id}
             name={talent.name}
             img={talent.img}
             state={talent.state}
+            editMode={true}
+            openModalDelete={openModalDelete}
+            handleVacantsInfoTemp={handleVacantsInfoTemp}
           />
         ))}
       </div>
+
+      <Modal
+        modalState={modalStateDelete}
+        setModalState={setModalStateDelete}
+        tabTitle={"Eliminar vacante"}
+      >
+        <p>
+          ¿Estás seguro que deseas eliminar el testimonio de{" "}
+          <b>{vacantsInfoTemp.name}</b>?
+        </p>
+
+        <div className="btn_container">
+          <button
+            onClick={() => {
+              deleteVacant(vacantsInfoTemp.id);
+              setModalStateDelete(false);
+            }}
+            className="btn btn-danger"
+          >
+            Confirmar
+          </button>
+          <button
+            onClick={() => {
+              setModalStateDelete(false);
+            }}
+            className="btn btn-primary"
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
+
+      <Modal
+        modalState={modalStateViewTalent}
+        setModalState={setModalStateViewTalent}
+        tabTitle={"Solicitud de " + talentInfoTemp.user}
+      >
+        <ViewTalent
+          talentInfo={talentInfoTemp}
+          setModalState={setModalStateViewTalent}
+          update={getNotificationTalent}
+        />
+      </Modal>
     </main>
   );
 };

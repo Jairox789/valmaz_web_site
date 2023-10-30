@@ -62,7 +62,7 @@
     width: 74%;
 }
 
-.slider_two_container .item a{
+.slider_two_info a{
     margin-right: 6px;
     text-decoration: none;
     padding: 20px 22px;
@@ -70,6 +70,8 @@
     border: 2px solid;
     color: white;
 }
+
+  
 
 .slider_two_container .item a svg{
     width: 30px;
@@ -83,6 +85,15 @@
     pointer-events: none;
 }
 
+.slider_two_container .item a svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s; /* Agrega una transición de 0.3 segundos a la propiedad transform */
+}
+
+.slider_two_container .item a svg:hover {
+    transform: scale(2.0); /* Escala la flecha al 110% de su tamaño original al hacer hover */
+}
 /*MOVIL*/
 
 @media (max-width: 768px){

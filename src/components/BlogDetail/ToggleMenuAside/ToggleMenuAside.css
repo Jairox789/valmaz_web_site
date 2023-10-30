@@ -1,4 +1,4 @@
-.toggle_menu_aside{
+.toggle_menu_aside {
     background: #E4E4DD;
     border-radius: 35px 0px 0px 35px;
     padding: 10px 0px 10px 10px;
@@ -7,9 +7,20 @@
     right: 0;
     z-index: 99;
     cursor: pointer;
+    transition: background 0.3s, padding 0.3s;
 }
 
-.toggle_menu_aside svg{
+.toggle_menu_aside svg {
     width: 35px;
     height: 35px;
+    transition: transform 0.3s;
+}
+
+.toggle_menu_aside:hover {
+    background: #c7c7c7;
+    padding: 10px 10px 10px 0px;
+}
+
+.toggle_menu_aside:hover svg {
+    transform: scale(1.0);
 }

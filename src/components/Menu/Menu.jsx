@@ -63,20 +63,41 @@ export const Menu = ({ menuVisible, toggleMenu }) => {
       <div className="menu_container_info ">
         <div>
           <h2>Estudio</h2>
-          <span>26-30 New Damietta El-Mahalla El-Kubra, SK1 66LM</span>
+          <span>
+            Blvd. Agua Caliente 9955-Int. 507, Calete, 22044 Tijuana, B.C.
+          </span>
         </div>
         <div>
           <h2>Contacto</h2>
-          <p>+00 (2)012 3321</p>
-          <p>info@VALMAZ.COM</p>
+          <a href="tel:+526648895225">
+            <p>+526648895225</p>
+          </a>
+          <a href="mailto: victor@valmaz.com">
+            <p>victor@valmaz.com</p>
+          </a>
         </div>
         <div>
           <h2>Siguenos</h2>
           <div className="menu_container_info_social ">
-            <span>Linkedin</span>
-            <span>Twitter</span>
-            <span>Instagram</span>
-            <span>Facebook</span>
+            <a href="https://www.facebook.com/valmazmarketingdigital/">
+              <span>Facebook</span>
+            </a>
+
+            <a href="https://www.instagram.com/valmazmarketingdigital/">
+              <span>Instagram</span>
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCx8LF0ZsoTe54xYmi9UUrUw">
+              <span>Youtube</span>
+            </a>
+
+            <a href="https://www.linkedin.com/company/valmaz-marketing-digital/">
+              <span>Linkedin</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@valmazmarketing?_t=8gkp43DhzQj&_r=1">
+              <span>Tiktok</span>
+            </a>
           </div>
         </div>
       </div>

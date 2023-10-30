@@ -1,0 +1,12 @@
+.admin_create_services{
+    align-items: flex-start;
+    text-align: center;
+}
+
+.admin_create_services_create{
+    width: 30%;
+}
+
+.admin_create_services_preview{
+    width: 60%;
+}

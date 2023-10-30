@@ -5,7 +5,7 @@ export const AuthorSignature = ({ author, link }) => {
   return (
     <div className="author_signature">
       <p>
-        Escritor por: <a href={link}>{author}</a>
+        Escrito por: <a href={link}>{author}</a>
       </p>
     </div>
   );

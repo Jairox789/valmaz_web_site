@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./PortfolioInfo.css";
+import { Link } from "react-router-dom";
 
-export const PortfolioInfo = ({ description, service }) => {
+export const PortfolioInfo = ({ description, service, serviceDescription }) => {
   //LOGICA
   const [toggleShowInfo, setToggleShowInfo] = useState(true);
 
@@ -30,7 +31,17 @@ export const PortfolioInfo = ({ description, service }) => {
         </span>
       </div>
       <div className="portfolio_info_body">
-        <span>{toggleShowInfo ? description : service}</span>
+        <p>{toggleShowInfo ? description : service}</p>
+        <p>{toggleShowInfo ? "" : serviceDescription}</p>
+        <p>
+          {toggleShowInfo ? (
+            ""
+          ) : (
+            <Link to={"/cotizar"} className="btn_call_to_action_v2">
+              Cotizar
+            </Link>
+          )}
+        </p>
       </div>
     </div>
   );

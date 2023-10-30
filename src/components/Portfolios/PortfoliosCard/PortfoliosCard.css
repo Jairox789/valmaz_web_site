@@ -49,6 +49,25 @@ html[data-theme="dark"] {
     height: 20px;
 }
 
+.portfolios_info_admin{
+    position: relative;
+    bottom: 0%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-around;
+}
+
+.portfolios_info_admin svg{
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 8px;
+    margin-right: 8px;
+    margin-left: 4px;
+    color: rgb(236, 236, 236);
+    background: #161616;
+}
 /*MOVIL*/
 
 @media (max-width: 768px){

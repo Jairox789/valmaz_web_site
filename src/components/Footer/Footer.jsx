@@ -6,15 +6,17 @@ import {
   BiLogoLinkedin,
   BiLogoInstagramAlt,
   BiLogoFacebook,
+  BiLogoYoutube,
+  BiLogoTiktok,
 } from "react-icons/bi";
-import { BsTwitter } from "react-icons/bs";
 export const Footer = () => {
   //LOGICA
   const { themeToggle } = useTheme();
 
-  const logo = themeToggle
-    ? "https://i.ibb.co/6gD2t0y/logo-dark.png"
-    : "https://i.ibb.co/dKkCKvN/logo-light.png";
+  const logo =
+    themeToggle === "dark"
+      ? "/src/assets/logo_dark.png"
+      : "/src/assets/logo_light.png";
 
   const currentYear = new Date().getFullYear();
   return (
@@ -25,12 +27,29 @@ export const Footer = () => {
             <img src={logo} />
           </Link>
           <div className="social_media_icon_container">
-            <SocialMediaIcon link={"facebook.com"} icon={<BiLogoFacebook />} />
-            <SocialMediaIcon link={"twitter.com"} icon={<BsTwitter />} />
-            <SocialMediaIcon link={"linkedin.com"} icon={<BiLogoLinkedin />} />
             <SocialMediaIcon
-              link={"instagram.com"}
+              link={"https://www.facebook.com/valmazmarketingdigital"}
+              icon={<BiLogoFacebook />}
+            />
+            <SocialMediaIcon
+              link={"https://www.instagram.com/valmazmarketingdigital/"}
               icon={<BiLogoInstagramAlt />}
+            />
+            <SocialMediaIcon
+              link={"https://www.youtube.com/channel/UCx8LF0ZsoTe54xYmi9UUrUw"}
+              icon={<BiLogoYoutube />}
+            />
+            <SocialMediaIcon
+              link={
+                "https://www.linkedin.com/company/valmaz-marketing-digital/"
+              }
+              icon={<BiLogoLinkedin />}
+            />
+            <SocialMediaIcon
+              link={
+                "https://www.tiktok.com/@valmazmarketing?_t=8gkp43DhzQj&_r=1"
+              }
+              icon={<BiLogoTiktok />}
             />
           </div>
         </div>
@@ -47,14 +66,14 @@ export const Footer = () => {
         </div>
         <div className="footer_info_contact">
           <h3>Contacto</h3>
-          <a href="tel:+526648895251">T. 664 889 5251</a>
-          <a href="mailto: info@valmaz.com">E. Info@valmaz.com</a>
+          <a href="tel:+526648895225">T. 6648895225</a>
+          <a href="mailto: victor@valmaz.com">E. victor@valmaz.com</a>
         </div>
         <div className="footer_info_address">
           <h3>Dirección</h3>
-          <span>
+          <a href="https://www.google.com.mx/maps/place/Valmaz+Marketing/@32.5177417,-117.0206858,17z/data=!3m1!4b1!4m6!3m5!1s0x80d94840208ff4ab:0x91081caa78c1cc22!8m2!3d32.5177372!4d-117.0181109!16s%2Fg%2F11dylrt914?entry=ttu">
             Blvd. Agua Caliente 9955-Int. 507, Calete, 22044 Tijuana, B.C.
-          </span>
+          </a>
         </div>
       </div>
       <p>&copy; {currentYear} Valmaz marketing.</p>

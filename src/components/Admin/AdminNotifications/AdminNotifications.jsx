@@ -6,6 +6,9 @@ export const AdminNotifications = ({
   textPending,
   infoNotification,
   options,
+  update,
+  openModal,
+  handleTemp,
 }) => {
   //LOGICA
   const [toggleAdminNotifications, setToggleAdminNotifications] =
@@ -14,7 +17,6 @@ export const AdminNotifications = ({
   const toggleNotifications = () => {
     setToggleAdminNotifications(!toggleAdminNotifications);
   };
-
   return (
     <aside className="admin_notifications_panel">
       <div onClick={toggleNotifications} className="admin_notifications_toggle">
@@ -24,14 +26,19 @@ export const AdminNotifications = ({
         <span>{textPending}</span>
       </div>
 
-      {toggleAdminNotifications ? (
+      {toggleAdminNotifications && infoNotification.length > 0 ? (
         <div className="admin_notifications">
           {infoNotification.map((info) => (
             <AdminNotificationItem
               key={info.id}
+              id={info.id}
               user={info.user}
               text={info.content}
               options={options}
+              update={update}
+              setToggleAdminNotifications={setToggleAdminNotifications}
+              openModal={openModal}
+              handleTemp={handleTemp}
             />
           ))}
         </div>

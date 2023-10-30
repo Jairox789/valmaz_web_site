@@ -42,7 +42,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 30%;
 }
 
 .side_menu_admin_close_session button{

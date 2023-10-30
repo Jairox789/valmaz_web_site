@@ -1,0 +1,38 @@
+/* Estilos para el tema claro */
+html[data-theme="light"] {
+    --color-background--not-found-page: #ffffff;
+    --color-text--not-found-page: #00000;
+}
+
+  /* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+    --color-background--not-found-page: #1a1a1a;
+    --color-text--not-found-page: #ffffff;
+}
+
+.route_not_found{
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-background--not-found-page);
+}
+
+.route_not_found img{
+    width: 80%;
+}
+
+.route_not_found h1{
+    color: var(--color-text--not-found-page) !important;
+}
+
+.route_not_found p, a{
+    color: var(--color-text--not-found-page);
+}
+
+@media (max-width: 768px){
+    .route_not_found{
+        flex-direction: column;
+    }
+}

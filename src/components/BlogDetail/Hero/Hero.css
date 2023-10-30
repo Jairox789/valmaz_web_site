@@ -1,4 +1,5 @@
 .hero_blog_detail{
+    position: relative;
     width: 100%;
 }
 
@@ -9,9 +10,9 @@
 }
 
 .hero_blog_detail_info{
-    position: absolute;
-    top: 482px;
-    left: 100px;
+    position: relative;
+    top: -200px;
+    margin-left: 100px;
 }
 
 .main_blog_detail .hero_blog_detail_info p, h1{

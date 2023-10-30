@@ -1,25 +1,30 @@
 /* Estilos para el tema claro */
 html[data-theme="light"] {
-    --color-social-menu-icon-background: #000000;
-  }
-  
-  /* Estilos para el tema oscuro */
-  html[data-theme="dark"] {
-    --color-social-menu-icon-background: #808080;
-  }
-
-.social_media_circle{
-    display: flex;
-    border-radius: 50px;
-    border: 1px solid #c7c7c7;
-    padding: 9px 12px;
-    align-items: center;
-    flex-direction: column;
-    width: 28px;
+  --color-social-menu-icon-background: #000000;
 }
 
-.social_media_circle svg{
-    width: 32px;
-    height: 32px;
-    color: var(--color-social-menu-icon-background);
+/* Estilos para el tema oscuro */
+html[data-theme="dark"] {
+  --color-social-menu-icon-background: #808080;
+}
+
+.social_media_circle {
+  display: flex;
+  border-radius: 50px;
+  border: 1px solid #c7c7c7;
+  padding: 9px 12px;
+  align-items: center;
+  flex-direction: column;
+  width: 28px;
+  transition: transform 0.3s; /* Agrega una transición suave de 0.3 segundos */
+}
+
+.social_media_circle:hover {
+  transform: scale(1.2); /* Cambia el valor según el nivel de zoom deseado */
+}
+
+.social_media_circle svg {
+  width: 32px;
+  height: 32px;
+  color: var(--color-social-menu-icon-background);
 }

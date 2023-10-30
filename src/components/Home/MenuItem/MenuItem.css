@@ -1,0 +1,7 @@
+.menu_item_link {
+  transition: transform 0.3s ease; /* Agrega una transición suave a la propiedad transform */
+}
+
+.menu_item_link:hover {
+  transform: scale(1.1); /* Aplica un acercamiento del 10% en el hover */
+}

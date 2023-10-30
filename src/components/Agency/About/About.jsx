@@ -23,21 +23,19 @@ export const About = () => {
             index={1}
             title={"Nuestra visión"}
             content={
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis placerat orci. Suspendisse at sem eleifend, dictum magna a, congue augue. Aenean mattis lorem faucibus, auctor lectus id, suscipit nunc. Suspendisse sagittis egestas lacus, quis ultricies lorem malesuada a"
+              "Nos consolidamos día a día como la agencia de marketing de mayor confianza para las empresas."
             }
           />
           <ToggleInfoItem
             index={2}
-            title={"Nuestras metas"}
-            content={
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis placerat orci. Suspendisse at sem eleifend, dictum magna a, congue augue. Aenean mattis lorem faucibus, auctor lectus id, suscipit nunc. Suspendisse sagittis egestas lacus, quis ultricies lorem malesuada a"
-            }
+            title={"Valores"}
+            content={"honestidad, creatividad y puntualidad."}
           />
           <ToggleInfoItem
             index={3}
             title={"Nuestra misión"}
             content={
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis placerat orci. Suspendisse at sem eleifend, dictum magna a, congue augue. Aenean mattis lorem faucibus, auctor lectus id, suscipit nunc. Suspendisse sagittis egestas lacus, quis ultricies lorem malesuada a"
+              "Nuestra misión en la Agencia Valmaz Marketing es brindar soluciones de marketing innovadoras y efectivas a nuestros clientes para ayudarlos a alcanzar sus objetivos de negocio y posicionarse de manera destacada en su mercado. Trabajamos con dedicación y pasión para ofrecer un servicio personalizado y de alta calidad que refleje los valores y la visión de cada empresa. Nos esforzamos por mantenernos actualizados en las últimas tendencias y tecnologías del marketing para garantizar el éxito de nuestros clientes y su satisfacción en cada proyecto que emprendemos juntos."
             }
           />
         </div>

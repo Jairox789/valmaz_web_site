@@ -1,0 +1,52 @@
+.body-t {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin-left: 50px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.container_settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container_settings form {
+    width: 60%;
+    padding: 40px;
+    border-radius: 2px;
+    box-shadow: 0 5px 50px rgba(32, 35, 41, 0.25);
+    background: #ffffff;
+}
+
+.status_login {
+    margin-top: 24px;
+}
+
+.container_settings input,button {
+    margin-top: 12px;
+}
+
+/*LAPTOP*/
+@media (max-width: 1366px) {
+    .container_settings form {
+        padding: 25px;
+    }
+    .container_settings input {
+        padding: 5px;
+    }
+}

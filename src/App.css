@@ -1,24 +1,25 @@
-*{
+* {
     box-sizing: unset !important;
+    transition: background 0.3s, color 0.3s; /* Agrega una transición suave a background y color para todos los elementos */
 }
 
-body{
+body {
     margin: 0;
 }
 
-p,span,ul,li{
+p, span, ul, li {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Archivo Narrow', sans-serif !important;
 }
 
-main{
+main {
     padding-top: 10vh;
 }
 
-.btn_call_to_action{
+.btn_call_to_action {
     margin-top: 36px;
     background-color: #DDDDDD;
     color: #000;
@@ -28,7 +29,7 @@ main{
     border: 0;
 }
 
-.btn_call_to_action_v2{
+.btn_call_to_action_v2 {
     margin-top: 36px;
     background-color: #F9F9F9;
     color: #000;
@@ -38,7 +39,16 @@ main{
     border: 0;
 }
 
-.main_admin{
+.btn_call_to_action_v2:disabled {
+    background-color: #ffffff;
+    color: #c5c5c5;
+}
+
+.btn_call_to_action:hover, .btn_call_to_action_v2:hover {
+    background-color: #c5c5c5;
+}
+
+.main_admin {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,4 +58,13 @@ main{
 
 .main_admin h1 {
     color: #000 !important;
+}
+
+.response_ok {
+    margin-top: 10px;
+}
+
+.response_error {
+    margin-top: 10px;
+    color: red;
 }

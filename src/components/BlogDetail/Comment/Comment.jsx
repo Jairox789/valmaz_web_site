@@ -1,8 +1,8 @@
+import React from "react";
 import "./Comment.css";
 import { BiSolidUserCircle } from "react-icons/bi";
 
-export const Comment = ({ name, date, comment }) => {
-  //LOGICA
+export const Comment = ({ name, date, comment, onReply }) => {
   return (
     <div className="comment">
       <div className="comment_info">
@@ -14,7 +14,7 @@ export const Comment = ({ name, date, comment }) => {
       </div>
       <div className="comment_content">
         <p>{comment}</p>
-        <button>Responder</button>
+        <button onClick={onReply}>Responder</button>
       </div>
     </div>
   );

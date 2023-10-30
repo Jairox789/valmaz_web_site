@@ -14,11 +14,16 @@ html[data-theme="dark"] {
     background: var(--color-portfolios-details-background);
     color: var(--color-portfolios-details-text);
     padding-bottom: 140px;
+    position: relative;
+}
+
+.main_portfolios_hero{
+    height: 90vh;
 }
 
 .main_portfolios_hero img{
     object-fit: cover;
-    height: 89vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -28,7 +33,7 @@ html[data-theme="dark"] {
     justify-content: space-around;
     position: absolute;
     top: 256px;
-    left: 134px;
+    left: 100px;
     width: 70%;
 }
 

@@ -26,17 +26,28 @@ footer img{
     width: 180px;
 }
 
-footer h3{
+footer h3 {
     font-size: 36px;
     color: var(--color-footer-title);
+    transition: transform 0.3s ease; /* Agrega una transición de transformación suave */
 }
 
-footer a{
+footer h3:hover {
+    transform: scale(1.05); /* Aplica un efecto de acercamiento del 5% al hacer hover */
+}
+
+footer a {
     text-decoration: none;
     font-size: 24px;
     margin-bottom: 8px;
     color: var(--color-footer-text);
+    transition: color 0.3s ease; /* Agrega una transición de color suave */
 }
+
+footer a:hover {
+    color: #868686; /* Cambia el color al hacer hover, puedes ajustar el color a tu elección */
+}
+
 
 footer p{
     padding-top: 12px;

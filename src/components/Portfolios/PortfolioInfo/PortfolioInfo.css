@@ -33,13 +33,26 @@ html[data-theme="dark"] {
 }
 
 .portfolio_info_body{
+    display: flex;
     margin-top: 40px;
     width: 80%;
     text-align: justify;
+    flex-direction: column;
+    align-items: center;
 }
 
 .selected{
     text-decoration: underline;
+}
+
+@media (max-width: 1400px){
+    .portfolio_info{
+        width: 60%;
+    }
+
+    .portfolio_info_header{
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px){

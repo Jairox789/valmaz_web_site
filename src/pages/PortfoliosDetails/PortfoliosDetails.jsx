@@ -1,134 +1,141 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./PortfoliosDetails.css";
 import { Footer } from "../../components/Footer/Footer";
 import { Navigation } from "../../components/Navigation/Navigation";
 import { useParams } from "react-router-dom";
 import { Carousel } from "../../components/Carousel/CarouselOne/Carousel";
 import { PortfolioInfo } from "../../components/Portfolios/PortfolioInfo/PortfolioInfo";
+import { useApiContext } from "../../context/ApiContext";
+import { PortfolioNotFound } from "../NotFound/Portfolio/PortfolioNotFound";
 
-export const PortfoliosDetails = () => {
+export const PortfoliosDetails = ({
+  createMode = false,
+  portfolioInfoCreate,
+  editMode = false,
+  id,
+}) => {
   //LOGICA
-  useEffect(() => {
-    // Desplaza la página al principio (0, 0)
-    window.scrollTo(0, 0);
-  }, []);
-  const portfolioInfo = [
-    {
-      id: 1,
-      slug: "proyecto-1",
-      mainImg: "https://i.ibb.co/tLZhSDz/36.jpg",
-      imgs: [
-        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
-        "https://i.ibb.co/XFQ9XHc/20.jpg",
-        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
-      ],
-      title: "Proyecto 1 de ejemplo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed egestas mauris. Proin auctor, turpis at condimentum ornare, tortor purus aliquet erat, nec porta est nisi sed turpis. Phasellus non scelerisque dui. Vestibulum eget eros a arcu venenatis lacinia. Fusce dictum, enim eget pellentesque ultrices, lectus sem auctor tortor, in sodales felis sapien vitae mi.",
-      service: "Servicio 1",
-    },
-    {
-      id: 2,
-      slug: "proyecto-2",
-      mainImg: "https://i.ibb.co/wwFgyTB/IMG-2658.jpg",
-      imgs: [
-        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
-        "https://i.ibb.co/XFQ9XHc/20.jpg",
-        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
-      ],
-      title: "Proyecto 2 de ejemplo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed egestas mauris. Proin auctor, turpis at condimentum ornare, tortor purus aliquet erat, nec porta est nisi sed turpis. Phasellus non scelerisque dui. Vestibulum eget eros a arcu venenatis lacinia. Fusce dictum, enim eget pellentesque ultrices, lectus sem auctor tortor, in sodales felis sapien vitae mi.",
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-      service: "Servicio 2",
-    },
-    {
-      id: 3,
-      slug: "proyecto-3",
-      mainImg: "https://i.ibb.co/m5zR56s/IMG-0021.jpg",
-      imgs: [
-        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
-        "https://i.ibb.co/XFQ9XHc/20.jpg",
-        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
-      ],
-      title: "Proyecto 3 de ejemplo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed egestas mauris. Proin auctor, turpis at condimentum ornare, tortor purus aliquet erat, nec porta est nisi sed turpis. Phasellus non scelerisque dui. Vestibulum eget eros a arcu venenatis lacinia. Fusce dictum, enim eget pellentesque ultrices, lectus sem auctor tortor, in sodales felis sapien vitae mi.",
-      service: "Servicio 3",
-    },
-    {
-      id: 4,
-      slug: "proyecto-4",
-      mainImg: "https://i.ibb.co/VW8Y5yr/1-2.jpg",
-      imgs: [
-        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
-        "https://i.ibb.co/XFQ9XHc/20.jpg",
-        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
-      ],
-      title: "Proyecto 4 de ejemplo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed egestas mauris. Proin auctor, turpis at condimentum ornare, tortor purus aliquet erat, nec porta est nisi sed turpis. Phasellus non scelerisque dui. Vestibulum eget eros a arcu venenatis lacinia. Fusce dictum, enim eget pellentesque ultrices, lectus sem auctor tortor, in sodales felis sapien vitae mi.",
-
-      service: "Servicio 4",
-    },
-    {
-      id: 5,
-      slug: "proyecto-5",
-      mainImg: "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-      imgs: [
-        "https://i.ibb.co/p3YpMSb/2770631597145984701-IMG-9996.jpg",
-        "https://i.ibb.co/XFQ9XHc/20.jpg",
-        "https://i.ibb.co/XX1VKqt/20210618-AXL-DC-IMG-6400-HDR.jpg",
-        "https://i.ibb.co/ck4bVkq/IMG-0850.jpg",
-      ],
-      title: "Proyecto 5 de ejemplo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed egestas mauris. Proin auctor, turpis at condimentum ornare, tortor purus aliquet erat, nec porta est nisi sed turpis. Phasellus non scelerisque dui. Vestibulum eget eros a arcu venenatis lacinia. Fusce dictum, enim eget pellentesque ultrices, lectus sem auctor tortor, in sodales felis sapien vitae mi.",
-
-      service: "Servicio 5",
-    },
-  ];
+  const [portfolioInfo, setPortfolioInfo] = useState({});
+  const [portfolioNavigate, setPortfolioNavigate] = useState([]);
+  const { apiUrl } = useApiContext();
 
   const { slug } = useParams();
 
-  const selectedPortfolio = portfolioInfo.find((s) => s.slug === slug);
+  const getPortfolioInfo = async () => {
+    setIsLoading(true);
+    fetch(apiUrl + "/portfolio/slug/" + slug)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPortfolioInfo(data);
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
+  const getPortfolioNavigate = async () => {
+    fetch(apiUrl + "/portfolio_navigate/" + slug)
+      .then((response) => response.json())
+      .then((data) => {
+        setPortfolioNavigate(data);
+      });
+  };
+
+  useEffect(() => {
+    if (editMode == false && createMode == false) {
+      getPortfolioInfo();
+      getPortfolioNavigate();
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    getPortfolioInfo();
+    getPortfolioNavigate();
+  }, [slug]);
+
+  const selectedPortfolio = createMode ? portfolioInfoCreate : portfolioInfo;
   return (
     <>
       <main className="main_portfolios_detail">
-        <section className="main_portfolios_hero">
-          <img src={selectedPortfolio.mainImg} />
-
-          <div className="main_portfolios_detail_info">
-            <div>
-              <h1 className="main_portfolios_detail_info_title">
-                {selectedPortfolio.title}
-              </h1>
-              <h2 className="main_portfolios_detail_info_content">
-                {selectedPortfolio.service}
-              </h2>
-              <span>{selectedPortfolio.description}</span>
-            </div>
-          </div>
-        </section>
-        <section className="portfolios_carousel">
-          <Carousel imgs={selectedPortfolio.imgs} />
-        </section>
-        <section className="portfolios_info">
-          <PortfolioInfo
-            description={selectedPortfolio.description}
-            service={selectedPortfolio.service}
-          />
-        </section>
+        {isLoading ? (
+          <p>Cargando</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : !selectedPortfolio.status ? (
+          <PortfolioNotFound />
+        ) : Object.keys(selectedPortfolio).length > 0 ? (
+          <>
+            <section className="main_portfolios_hero">
+              <img
+                src={
+                  selectedPortfolio.mainImg
+                    ? selectedPortfolio.mainImg.url
+                    : "https://cdn-icons-png.flaticon.com/512/1617/1617704.png"
+                }
+              />
+              <div className="main_portfolios_detail_info">
+                <div>
+                  <h1 className="main_portfolios_detail_info_title">
+                    {selectedPortfolio.title ? selectedPortfolio.title : ""}
+                  </h1>
+                  <h2 className="main_portfolios_detail_info_content">
+                    {selectedPortfolio.service
+                      ? selectedPortfolio.service.title
+                      : ""}
+                  </h2>
+                  <span>{selectedPortfolio.description}</span>
+                </div>
+              </div>
+            </section>
+            <section className="portfolios_carousel">
+              <Carousel imgs={selectedPortfolio.imgs} />
+            </section>
+            <section className="portfolios_info">
+              <PortfolioInfo
+                description={selectedPortfolio.description}
+                service={
+                  selectedPortfolio.service
+                    ? selectedPortfolio.service.title
+                    : ""
+                }
+                serviceDescription={
+                  selectedPortfolio.service
+                    ? selectedPortfolio.service.description
+                    : ""
+                }
+              />
+            </section>
+          </>
+        ) : (
+          <PortfolioNotFound />
+        )}
       </main>
-      <div className="navigation_portfolios">
-        <Navigation menuLink={"/proyectos"} />
-      </div>
-      <Footer />
+
+      {createMode || editMode ? (
+        ""
+      ) : (
+        <div className="navigation_portfolios">
+          <Navigation
+            menuLink={"/proyectos/"}
+            next={portfolioNavigate.next_portfolio}
+            previous={portfolioNavigate.previous_portfolio}
+            availables={"proyectos"}
+          />
+        </div>
+      )}
+      {createMode || editMode ? "" : <Footer />}
     </>
   );
 };

@@ -16,8 +16,8 @@ html[data-theme="dark"] {
     background: var(--color-agency-background);
 }
 
-.main_agency h1,h2{
-    color: var(--color-agency-title);
+.main_agency h1{
+    color: var(--color-agency-title) !important;
 }
 
 .main_agency span,p{

@@ -8,3 +8,7 @@
     width: 81%;
     flex-wrap: wrap;
 }
+
+.admin_blog_add_element{
+    display: flex;
+}

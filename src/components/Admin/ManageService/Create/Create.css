@@ -1,0 +1,10 @@
+.admin_create_service{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admin_create_service input, textarea{
+    margin-bottom: 12px;
+}
