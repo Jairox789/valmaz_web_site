@@ -8,8 +8,8 @@ export const Navbar = ({ toggleMenu }) => {
   const { themeToggle } = useTheme();
   const logo =
     themeToggle === "dark"
-      ? "/src/assets/logo_dark.png"
-      : "/src/assets/logo_light.png";
+      ? "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_dark.png"
+      : "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_light.png";
   return (
     <nav>
       <div className="nav_logo">
