@@ -34,13 +34,13 @@ function App() {
   //LOGICA
   const [menuVisible, setMenuVisible] = useState(false);
 
-  const { admin, getUserDataLocalStorage, login } = useAuth();
-  const auth = admin ? admin.success : false;
-
-  useEffect(() => {
-    const userData = getUserDataLocalStorage();
-    login(userData.user, userData.password);
-  }, []);
+  // const { admin, getUserDataLocalStorage, login } = useAuth();
+  // const auth = admin ? admin.success : false;
+  const auth = true;
+  // useEffect(() => {
+  //   const userData = getUserDataLocalStorage();
+  //   login(userData.user, userData.password);
+  // }, []);
 
   const toggleMenu = (state = true) => {
     if (state) {
