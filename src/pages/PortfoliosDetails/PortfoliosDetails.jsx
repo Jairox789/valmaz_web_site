@@ -63,6 +63,7 @@ export const PortfoliosDetails = ({
   useEffect(() => {
     getPortfolioInfo();
     getPortfolioNavigate();
+    window.scrollTo(0, 0);
   }, [slug]);
 
   const selectedPortfolio = createMode ? portfolioInfoCreate : portfolioInfo;

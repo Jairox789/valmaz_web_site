@@ -32,11 +32,8 @@ export const AdminAgency = () => {
   };
 
   const deleteTestimolias = (id) => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/testimonials/" + id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/testimonials_delete/" + id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

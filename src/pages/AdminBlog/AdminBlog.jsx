@@ -30,11 +30,8 @@ export const AdminBlog = () => {
   };
 
   const deleteBlogs = (id) => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/blogs/" + id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/blogs_delete/" + id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

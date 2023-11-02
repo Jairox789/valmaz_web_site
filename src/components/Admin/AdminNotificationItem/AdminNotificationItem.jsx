@@ -35,11 +35,8 @@ export const AdminNotificationItem = ({
   };
 
   const deleteComment = () => {
-    const formData = new FormData();
-
     fetch(apiUrl + "/blogs_comment_delete/" + id, {
-      method: "DELETE",
-      body: formData,
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

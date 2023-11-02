@@ -58,6 +58,12 @@ export const ServicesDetails = ({
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    getServicesInfo();
+    getServiceNavigate();
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   const selectedService = createMode ? servicesInfoCreate : servicesInfo;
 
   const image = selectedService.mainImg

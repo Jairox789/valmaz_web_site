@@ -16,11 +16,8 @@ export const ViewTalent = ({ talentInfo, setModalState, update }) => {
   };
 
   const deleteTalent = () => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/talents/" + talent.id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/talents_delete/" + talent.id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

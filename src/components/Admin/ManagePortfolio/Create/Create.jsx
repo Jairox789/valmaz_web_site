@@ -59,12 +59,12 @@ export const Create = ({
 
   const createPortfolio = () => {
     const formData = new FormData();
-    formData.append("title", id);
+    formData.append("title", title);
     formData.append("slug", slug);
     formData.append("mainImg", mainImg.id);
     formData.append("imgs", JSON.stringify(imgs));
     formData.append("description", description);
-    formData.append("service", selectedService.id);
+    formData.append("service", selectedService);
 
     // Hacer una solicitud para subir la imagen al servidor
     fetch(apiUrl + "/portfolio/", {

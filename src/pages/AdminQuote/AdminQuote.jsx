@@ -23,11 +23,8 @@ export const AdminQuote = () => {
   }, []);
 
   const deleteQuote = (id) => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/quote/" + id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/quote_delete/" + id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

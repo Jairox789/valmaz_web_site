@@ -31,11 +31,8 @@ export const AdminTalent = () => {
   };
 
   const deleteVacant = (id) => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/vacants/" + id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/vacants_delete/" + id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {

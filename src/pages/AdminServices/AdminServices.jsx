@@ -20,15 +20,12 @@ export const AdminServices = () => {
   };
 
   const deleteServices = (id) => {
-    const formData = new FormData();
-
     fetch(apiUrl + "/services/" + id, {
-      method: "DELETE",
-      body: formData,
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // Actualiza el estado con el nombre de la imagen
+        console.log(data);
         getServicesInfo();
       })
       .catch((error) => {

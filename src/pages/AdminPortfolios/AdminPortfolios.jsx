@@ -32,11 +32,8 @@ export const AdminPortfolios = ({ editMode = false }) => {
   };
 
   const deletePortfolio = (id) => {
-    const formData = new FormData();
-
-    fetch(apiUrl + "/portfolio/" + id, {
-      method: "DELETE",
-      body: formData,
+    fetch(apiUrl + "/portfolio_delete/" + id, {
+      method: "POST",
     })
       .then((response) => response.json())
       .then((data) => {
