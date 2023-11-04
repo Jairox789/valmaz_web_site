@@ -57,25 +57,28 @@ export const AdminAgency = () => {
         toAdd={"Añadir un nuevo testimonio"}
         link={"/admin/agencia/crear/"}
       />
-
-      <div className="testimony_container">
-        {testimonys.map((testimony, index) => (
-          <TestimonyCard
-            key={index}
-            id={testimony.id}
-            name={testimony.name}
-            img={testimony.img}
-            facebook={testimony.social.facebook}
-            instagram={testimony.social.instagram}
-            linkedin={testimony.social.linkedin}
-            website={testimony.social.website}
-            twitter={testimony.social.twitter}
-            editMode={true}
-            openModalDelete={openModalDelete}
-            handleTestimonysInfoTemp={handleTestimonysInfoTemp}
-          />
-        ))}
-      </div>
+      {testimonys.length > 0 ? (
+        <div className="testimony_container">
+          {testimonys.map((testimony, index) => (
+            <TestimonyCard
+              key={index}
+              id={testimony.id}
+              name={testimony.name}
+              img={testimony.img}
+              facebook={testimony.social.facebook}
+              instagram={testimony.social.instagram}
+              linkedin={testimony.social.linkedin}
+              website={testimony.social.website}
+              twitter={testimony.social.twitter}
+              editMode={true}
+              openModalDelete={openModalDelete}
+              handleTestimonysInfoTemp={handleTestimonysInfoTemp}
+            />
+          ))}
+        </div>
+      ) : (
+        <h2 className="not_availables_title">No hay testimonios disponibles</h2>
+      )}
 
       <Modal
         modalState={modalStateDelete}

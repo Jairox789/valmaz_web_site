@@ -19,7 +19,7 @@ export const AdminCreateVacant = ({ editMode = false }) => {
     fetch(apiUrl + "/vacants/" + id)
       .then((response) => response.json())
       .then((data) => {
-        setVacant(data);
+        setVacant(data[0]);
       });
   };
 

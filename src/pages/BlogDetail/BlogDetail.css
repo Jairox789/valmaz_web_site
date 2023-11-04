@@ -19,10 +19,10 @@ html[data-theme="dark"] {
     background: var(--color-blog-detail-background);
 }
 
-.main_blog_detail span, p{
-    color: var(--color-blog-detail-text);
+.paragraph_body{
+    color: var(--color-blog-detail-text) !important;
 }
 
-.main_blog_detail h1,h2,h3,h4,h5,h6 {
-    color: var(--color-blog-detail-title);
+.title_body {
+    color: var(--color-blog-detail-title) !important;
 }

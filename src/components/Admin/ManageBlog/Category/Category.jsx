@@ -45,13 +45,13 @@ export const Category = () => {
   return (
     <div className="create_category">
       <form className="create_category_form">
-        <label htmlFor="title">Titulo del servicio:</label>
+        <label htmlFor="title">Nombre de categoría:</label>
         <input
           className="form-control"
           type="text"
           id="title"
           name="title"
-          placeholder="Escribe el titulo del servicio"
+          placeholder="Escribe de nombre de la categoría"
           value={title}
           onChange={(e) => {
             handleInputs(setTitle, e.target.value);

@@ -90,25 +90,29 @@ export const AdminBlog = () => {
         update={getNotificationBlogs}
       />
 
-      <div className="admin_blog_container">
-        {blogInfo.map((blog, index) => (
-          <BlogCard
-            key={index}
-            img={blog.mainImg}
-            title={blog.title}
-            author={blog.author}
-            date={blog.date}
-            comments={blog.comments}
-            category={blog.category.name}
-            summary={blog.summary}
-            slug={blog.slug}
-            editMode={true}
-            id={blog.id}
-            openModalDelete={openModalDelete}
-            handleBlogsInfoTemp={handleBlogsInfoTemp}
-          />
-        ))}
-      </div>
+      {blogInfo.length > 0 ? (
+        <div className="admin_blog_container">
+          {blogInfo.map((blog, index) => (
+            <BlogCard
+              key={index}
+              img={blog.mainImg}
+              title={blog.title}
+              author={blog.author}
+              date={blog.date}
+              comments={blog.comments}
+              category={blog.category.name}
+              summary={blog.summary}
+              slug={blog.slug}
+              editMode={true}
+              id={blog.id}
+              openModalDelete={openModalDelete}
+              handleBlogsInfoTemp={handleBlogsInfoTemp}
+            />
+          ))}
+        </div>
+      ) : (
+        <h2 className="not_availables_title">No hay blogs disponibles</h2>
+      )}
 
       <Modal
         modalState={modalStateDelete}

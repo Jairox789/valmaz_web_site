@@ -57,13 +57,16 @@ export const AdminServices = () => {
         toAdd={"Añadir nuevo servicio"}
         link={"/admin/servicios/crear/"}
       />
-
-      <SliderTwo
-        info={servicesInfo}
-        adminMode={true}
-        openModalDelete={openModalDelete}
-        handleServicesInfoTemp={handleServicesInfoTemp}
-      />
+      {servicesInfo.length > 0 ? (
+        <SliderTwo
+          info={servicesInfo}
+          adminMode={true}
+          openModalDelete={openModalDelete}
+          handleServicesInfoTemp={handleServicesInfoTemp}
+        />
+      ) : (
+        <h2 className="not_availables_title">No hay servicios disponibles</h2>
+      )}
 
       <Modal
         modalState={modalStateDelete}

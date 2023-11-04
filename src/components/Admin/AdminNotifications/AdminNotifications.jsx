@@ -33,7 +33,13 @@ export const AdminNotifications = ({
               key={info.id}
               id={info.id}
               user={info.user}
-              text={info.content}
+              text={
+                info.content.length > 0
+                  ? info.content[0].name
+                    ? info.content[0].name
+                    : info.content
+                  : info.content
+              }
               options={options}
               update={update}
               setToggleAdminNotifications={setToggleAdminNotifications}

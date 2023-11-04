@@ -62,7 +62,7 @@ export const AdminQuote = () => {
       <Modal
         modalState={modalStateDelete}
         setModalState={setModalStateDelete}
-        tabTitle={"Eliminar servicio"}
+        tabTitle={"Eliminar cotización"}
       >
         <p>
           ¿Estás seguro que deseas eliminar la cotización de{" "}

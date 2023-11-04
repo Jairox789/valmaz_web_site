@@ -21,7 +21,10 @@ export const Login = () => {
     <div className="container_login">
       <div className="frame">
         <div className="view">
-          <img src="https://i.ibb.co/dKkCKvN/logo-light.png" alt="logo" />
+          <img
+            src="https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_light.png"
+            alt="logo"
+          />
           <span>Administrador de sitio web</span>
         </div>
 

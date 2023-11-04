@@ -37,7 +37,7 @@ export const ViewTalent = ({ talentInfo, setModalState, update }) => {
       <p>Nombre: {talent.name}</p>
       <p>Número teléfonico: {talent.phone}</p>
       <p>Correo electrónico: {talent.email}</p>
-      <p>Vacante que solicita: {talent.vacant}</p>
+      <p>Vacante que solicita: {talent.vacant ? talent.vacant[0].name : ""}</p>
 
       <div className="view_talent_options">
         <a target="_blank" href={talent.cv} className="btn btn-primary">

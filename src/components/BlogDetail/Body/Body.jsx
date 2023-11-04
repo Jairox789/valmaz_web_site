@@ -8,11 +8,13 @@ export const Body = ({ content }) => {
       {content.map((item, index) => (
         <div key={index}>
           {/* TITULOS */}
-          {item.type === "h1" && <h1>{item.content}</h1>}
-          {item.type === "h2" && <h2>{item.content}</h2>}
-          {item.type === "h3" && <h3>{item.content}</h3>}
+          {item.type === "h1" && <h1 className="title_body">{item.content}</h1>}
+          {item.type === "h2" && <h2 className="title_body">{item.content}</h2>}
+          {item.type === "h3" && <h3 className="title_body">{item.content}</h3>}
           {/* Parrafos */}
-          {item.type === "p" && <p>{item.content}</p>}
+          {item.type === "p" && (
+            <p className="paragraph_body">{item.content}</p>
+          )}
           {/* Imagenes */}
           {item.type === "img" && <img src={item.content.url} />}
         </div>

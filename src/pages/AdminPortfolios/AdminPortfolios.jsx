@@ -75,7 +75,7 @@ export const AdminPortfolios = ({ editMode = false }) => {
           ))}
         </div>
       ) : (
-        ""
+        <h2 className="not_availables_title">No hay proyectos disponibles</h2>
       )}
 
       <Modal
