@@ -44,6 +44,7 @@ export const AdminBlog = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Blog)";
     getBlogsInfo();
     getNotificationBlogs();
     window.scrollTo(0, 0);

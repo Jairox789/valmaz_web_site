@@ -5,7 +5,7 @@ import { useApiContext } from "../../context/ApiContext";
 import { Modal } from "../../components/Modal/Modal";
 import { PortfoliosCard } from "../../components/Portfolios/PortfoliosCard/PortfoliosCard";
 
-export const AdminPortfolios = ({ editMode = false }) => {
+export const AdminPortfolios = () => {
   //LOGICA
   const [modalStateDelete, setModalStateDelete] = useState(false);
 
@@ -46,6 +46,7 @@ export const AdminPortfolios = ({ editMode = false }) => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Proyectos)";
     getPortfolioInfo();
     window.scrollTo(0, 0);
   }, []);
@@ -65,7 +66,7 @@ export const AdminPortfolios = ({ editMode = false }) => {
               key={index}
               id={portfolio.id}
               title={portfolio.title}
-              service={portfolio.service.title}
+              service={portfolio.service}
               img={portfolio.mainImg}
               slug={portfolio.slug}
               adminMode={true}

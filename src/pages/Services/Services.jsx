@@ -19,6 +19,7 @@ export const Services = () => {
   };
 
   useEffect(() => {
+    document.title = "Servicios - Valmaz";
     getServicesInfo();
     window.scrollTo(0, 0);
   }, []);

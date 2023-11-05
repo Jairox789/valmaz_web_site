@@ -51,7 +51,7 @@ export const MakeComment = ({ idBlog, replyTo, setReplyTo }) => {
   };
 
   useEffect(() => {
-    setComment("@" + replyTo);
+    setComment(replyTo ? "@" + replyTo : "");
   }, [replyTo]);
 
   return (

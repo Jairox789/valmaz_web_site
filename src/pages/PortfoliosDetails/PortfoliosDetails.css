@@ -39,6 +39,11 @@ html[data-theme="dark"] {
 
 .main_portfolios_detail_info_title, .main_portfolios_detail_info_content{
     color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main_portfolios_detail_info span {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main_portfolios_detail_info div:nth-child(1){

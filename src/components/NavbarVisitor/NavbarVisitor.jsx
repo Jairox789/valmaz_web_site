@@ -3,11 +3,11 @@ import { SocialMediasAside } from "../SocialMedia/SocialMediasAside/SocialMedias
 import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import "./NavbarVisitor.css";
 
-export const NavbarVisitor = ({ toggleMenu }) => {
+export const NavbarVisitor = ({ toggleMenu, isMenuVisible }) => {
   //LOGICA
   return (
     <>
-      <Navbar toggleMenu={toggleMenu} />
+      <Navbar toggleMenu={toggleMenu} isMenuVisible={isMenuVisible} />
       <div className="layout">
         <ThemeToggle />
         <SocialMediasAside />

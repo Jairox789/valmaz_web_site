@@ -67,6 +67,11 @@ export const PortfoliosDetails = ({
   }, [slug]);
 
   const selectedPortfolio = createMode ? portfolioInfoCreate : portfolioInfo;
+
+  useEffect(() => {
+    document.title = "Proyecto " + selectedPortfolio.title + " - Valmaz";
+  }, [selectedPortfolio]);
+
   return (
     <>
       <main className="main_portfolios_detail">
@@ -93,7 +98,7 @@ export const PortfoliosDetails = ({
                   </h1>
                   <h2 className="main_portfolios_detail_info_content">
                     {selectedPortfolio.service
-                      ? selectedPortfolio.service.title
+                      ? selectedPortfolio.service[0].title
                       : ""}
                   </h2>
                   <span>{selectedPortfolio.description}</span>
@@ -108,12 +113,12 @@ export const PortfoliosDetails = ({
                 description={selectedPortfolio.description}
                 service={
                   selectedPortfolio.service
-                    ? selectedPortfolio.service.title
+                    ? selectedPortfolio.service[0].title
                     : ""
                 }
                 serviceDescription={
                   selectedPortfolio.service
-                    ? selectedPortfolio.service.description
+                    ? selectedPortfolio.service[0].description
                     : ""
                 }
               />

@@ -13,6 +13,8 @@
     position: relative;
     top: -200px;
     margin-left: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70%;
 }
 
 .main_blog_detail .hero_blog_detail_info p, h1{
@@ -20,10 +22,3 @@
 }
 
 /*MOVIL*/
-
-@media (max-width: 768px){
-    .hero_blog_detail_info{
-        top: 504px;
-        left: 76px;
-    }
-}

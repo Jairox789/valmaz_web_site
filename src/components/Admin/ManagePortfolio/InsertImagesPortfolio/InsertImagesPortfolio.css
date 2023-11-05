@@ -1,0 +1,7 @@
+.insert_img_container svg{
+    cursor: pointer;
+}
+
+.insert_img_container svg:hover{
+    color: red;
+}

@@ -30,8 +30,10 @@ export const Blog = ({ searchByCategory = false }) => {
   };
 
   useEffect(() => {
+    document.title = "Blog - Valmaz";
     if (searchByCategory) {
       getBlogsByCategoryInfo();
+      document.title = "Blog categoría (" + slug + ")";
     } else {
       getBlogsInfo();
     }

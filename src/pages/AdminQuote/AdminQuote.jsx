@@ -18,6 +18,7 @@ export const AdminQuote = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Cotizaciones)";
     getQuoteInfo();
     window.scrollTo(0, 0);
   }, []);

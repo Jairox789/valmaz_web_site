@@ -6,15 +6,11 @@ export const ThemeToggle = ({}) => {
   //LOGICA
   const { toggleTheme, themeToggle } = useTheme();
 
-  const textState = themeToggle ? "Dark" : "Light";
+  const textState = themeToggle == "light" ? "Dark" : "Light";
 
   return (
-    <div className="theme_toggle">
-      {themeToggle ? (
-        <MdLightMode onClick={toggleTheme} />
-      ) : (
-        <MdDarkMode onClick={toggleTheme} />
-      )}
+    <div className="theme_toggle" onClick={toggleTheme}>
+      {themeToggle ? <MdLightMode /> : <MdDarkMode />}
       <span>{textState}</span>
     </div>
   );

@@ -6,7 +6,7 @@ export function Layout({ toggleMenu, menuVisible, children }) {
   //
   return (
     <>
-      <NavbarVisitor toggleMenu={toggleMenu} />
+      <NavbarVisitor toggleMenu={toggleMenu} isMenuVisible={menuVisible} />
       <Menu menuVisible={!menuVisible} toggleMenu={toggleMenu} />
       <Outlet />
     </>

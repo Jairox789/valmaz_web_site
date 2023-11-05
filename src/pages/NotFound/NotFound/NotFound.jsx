@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import "./NotFound.css";
+import { useEffect } from "react";
 
 export const NotFound = () => {
   //
+  useEffect(() => {
+    document.title = "No encontrado";
+  }, []);
   return (
     <div className="route_not_found">
       <div>

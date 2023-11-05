@@ -1,9 +1,8 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useApiContext } from "../../../../context/ApiContext";
 import { UploadImage } from "../../UploadImage/UploadImage";
 import "./Create.css";
 import { useEffect, useState } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { InsertImagesPortfolio } from "../InsertImagesPortfolio/InsertImagesPortfolio";
 
 export const Create = ({
@@ -214,7 +213,7 @@ export const Create = ({
       <input
         type="submit"
         value={editMode ? "Editar" : "Guardar"}
-        className="btn btn-primary"
+        className="btn btn-primary btn_send"
         onClick={(e) => {
           e.preventDefault();
           if (isFormFill()) {

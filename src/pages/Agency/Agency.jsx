@@ -20,6 +20,7 @@ export const Agency = () => {
       });
   };
   useEffect(() => {
+    document.title = "Agencia - Valmaz";
     getVacantsInfo();
     window.scrollTo(0, 0);
   }, []);

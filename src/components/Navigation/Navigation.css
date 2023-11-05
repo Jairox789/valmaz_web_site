@@ -49,12 +49,18 @@ html[data-theme="dark"] {
     height: 100%;
 }
 
-.navigation svg{
+.navigation svg {
     height: 90px;
     width: 90px;
     padding: 0 16px;
     color: var(--color-navigation-background);
-}
+    transition: transform 0.3s; /* Agregar transición de transformación */
+  }
+  
+  .navigation svg:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el cursor sobre él */
+  }
+  
 
 /*MOVIL*/
 @media (max-width: 768px){

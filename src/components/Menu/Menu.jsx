@@ -63,9 +63,9 @@ export const Menu = ({ menuVisible, toggleMenu }) => {
       <div className="menu_container_info ">
         <div>
           <h2>Estudio</h2>
-          <span>
+          <a href="https://www.google.com.mx/maps/place/Valmaz+Marketing/@32.5177417,-117.0206858,17z/data=!3m1!4b1!4m6!3m5!1s0x80d94840208ff4ab:0x91081caa78c1cc22!8m2!3d32.5177372!4d-117.0181109!16s%2Fg%2F11dylrt914?entry=ttu">
             Blvd. Agua Caliente 9955-Int. 507, Calete, 22044 Tijuana, B.C.
-          </span>
+          </a>
         </div>
         <div>
           <h2>Contacto</h2>
@@ -78,7 +78,7 @@ export const Menu = ({ menuVisible, toggleMenu }) => {
         </div>
         <div>
           <h2>Siguenos</h2>
-          <div className="menu_container_info_social ">
+          <div className="menu_container_info_social">
             <a href="https://www.facebook.com/valmazmarketingdigital/">
               <span>Facebook</span>
             </a>

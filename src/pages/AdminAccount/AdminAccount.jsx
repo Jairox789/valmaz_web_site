@@ -27,6 +27,7 @@ export const AdminAccount = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Mi cuenta)";
     handleEnableBtnSubmit();
   }, [newPassword, newPasswordConfirm]);
 

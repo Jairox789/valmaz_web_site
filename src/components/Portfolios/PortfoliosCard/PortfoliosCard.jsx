@@ -15,13 +15,14 @@ export const PortfoliosCard = ({
   handlePortfolioInfoTemp,
 }) => {
   //LOGICA
+
   return (
     <div className="portfolios_card">
       <img src={img} />
       <div className="portfolios_card_info">
         <div>
           <h3 className="portfolios_card_info_title">{title}</h3>
-          <h3 className="portfolios_card_info_title">{service}</h3>
+          <h3 className="portfolios_card_info_title">{service[0].title}</h3>
         </div>
         <div>
           <Link to={"/proyectos/" + slug}>

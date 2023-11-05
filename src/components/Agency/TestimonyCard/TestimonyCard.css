@@ -14,17 +14,18 @@
 
 .testimony_card_name{
     margin: 0;
-    position: absolute;
-    bottom: 0%;
+    position: relative;
+    bottom: 20%;
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.testimony_card_social{
+.testimony_card_social {
     display: flex;
     width: 100%;
     justify-content: center;
-    position: absolute;
-    top: 200px;
+    position: relative;
+    bottom: 66px;
 }
 
 .testimony_card_social svg{
@@ -36,7 +37,7 @@
 
 .testimony_card_edit_mode{
     position: relative;
-    bottom: 75%;
+    bottom: -50px;
     color: white;
     display: flex;
     align-items: center;

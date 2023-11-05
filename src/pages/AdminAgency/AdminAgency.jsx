@@ -46,6 +46,7 @@ export const AdminAgency = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Agencia)";
     getTestimonials();
     window.scrollTo(0, 0);
   }, []);

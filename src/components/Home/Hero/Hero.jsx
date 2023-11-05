@@ -7,8 +7,8 @@ export const Hero = () => {
 
   const logo =
     themeToggle === "dark"
-      ? "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_dark.png"
-      : "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_light.png";
+      ? "http://valmaz.com/valmaz_web_site_backend/public/media/logo_dark.png"
+      : "http://valmaz.com/valmaz_web_site_backend/public/media/logo_light.png";
 
   return (
     <section className="home_hero">

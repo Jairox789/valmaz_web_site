@@ -19,6 +19,7 @@ export const Portfolios = () => {
   };
 
   useEffect(() => {
+    document.title = "Proyectos - Valmaz";
     getPortfolioInfo();
     window.scrollTo(0, 0);
   }, []);
@@ -33,7 +34,7 @@ export const Portfolios = () => {
               <PortfoliosCard
                 key={index}
                 title={portfolio.title}
-                service={portfolio.service.title}
+                service={portfolio.service}
                 img={portfolio.mainImg}
                 slug={portfolio.slug}
               />

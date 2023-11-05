@@ -19,6 +19,7 @@ export const Talent = () => {
   };
 
   useEffect(() => {
+    document.title = "Talento - Valmaz";
     getVacantsInfo();
     window.scrollTo(0, 0);
   }, []);

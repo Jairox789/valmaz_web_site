@@ -86,8 +86,13 @@ html[data-theme="light"] {
     border-left: 1px solid #BBBBBB;
 }
 
-.menu_container_info a{
+.menu_container_info a, p, .menu_container_info_social span{
     text-decoration: none;
+    transition: color 0.3s ease; /* Agrega una transición de color suave */
+}
+
+.menu_container_info a:hover, p:hover, .menu_container_info_social span:hover{
+    color: #868686; /* Cambia el color al hacer hover, puedes ajustar el color a tu elección */
 }
 
 .menu_container_info h2{

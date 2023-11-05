@@ -1,3 +1,4 @@
+import "./InsertImagesPortfolio.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { UploadImage } from "../../UploadImage/UploadImage";
 

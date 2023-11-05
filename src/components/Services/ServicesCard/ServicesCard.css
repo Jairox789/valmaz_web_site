@@ -31,10 +31,12 @@ html[data-theme="dark"] {
     justify-content: space-between;
     align-items: center;
     color: #FFF;
+    text-align: center;
 }
 
 .services_card_info_text{
     color: #FFF !important;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .services_card_info a{

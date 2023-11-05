@@ -70,6 +70,7 @@ export const AdminTalent = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Talento)";
     getVacantsInfo();
     getNotificationTalent();
     window.scrollTo(0, 0);

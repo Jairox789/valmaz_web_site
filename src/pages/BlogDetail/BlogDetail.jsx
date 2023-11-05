@@ -115,6 +115,11 @@ export const BlogDetail = ({ createMode = false, blogInfoCreate }) => {
   }, [slug]);
 
   const selectedBlog = createMode ? blogInfoCreate : blogInfo;
+
+  useEffect(() => {
+    document.title = selectedBlog.title + " - Valmaz";
+  }, [selectedBlog]);
+
   return (
     <>
       {isLoading ? (

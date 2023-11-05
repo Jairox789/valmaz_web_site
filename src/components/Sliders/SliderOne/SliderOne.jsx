@@ -27,7 +27,7 @@ export const SliderOne = ({ info }) => {
             </div>
             <div className="slider_one_info">
               <h3>{project.title}</h3>
-              <span>{project.service.title}</span>
+              <span>{project.service[0].title}</span>
             </div>
             <div className="slider_one_btn_container">
               <Link to={"/proyectos/" + project.slug} className="iconLink">

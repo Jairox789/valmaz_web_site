@@ -6,6 +6,7 @@ import { Footer } from "../../components/Footer/Footer";
 export const Quote = () => {
   //LOGICA
   useEffect(() => {
+    document.title = "Cotizar - Valmaz";
     window.scrollTo(0, 0);
   }, []);
 

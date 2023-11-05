@@ -66,6 +66,10 @@ export const ServicesDetails = ({
 
   const selectedService = createMode ? servicesInfoCreate : servicesInfo;
 
+  useEffect(() => {
+    document.title = "Servicios " + selectedService.title + " Valmaz";
+  }, [selectedService]);
+
   const image = selectedService.mainImg
     ? selectedService.mainImg.url
     : "https://cdn-icons-png.flaticon.com/512/1632/1632721.png";
@@ -86,7 +90,9 @@ export const ServicesDetails = ({
               <h1 className="services_detail_info_title">
                 {selectedService.title}
               </h1>
-              <span>{selectedService.description}</span>
+              <span className="services_detail_info_description">
+                {selectedService.description}
+              </span>
             </div>
             <div>
               <Link to={"/cotizar"}>Cotizar</Link>

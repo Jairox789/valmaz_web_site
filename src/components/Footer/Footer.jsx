@@ -15,8 +15,8 @@ export const Footer = () => {
 
   const logo =
     themeToggle === "dark"
-      ? "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_dark.png"
-      : "https://valmaz.000webhostapp.com/valmaz_web_site_backend/public/media/logo_light.png";
+      ? "http://valmaz.com/valmaz_web_site_backend/public/media/logo_dark.png"
+      : "http://valmaz.com/valmaz_web_site_backend/public/media/logo_light.png";
 
   const currentYear = new Date().getFullYear();
   return (

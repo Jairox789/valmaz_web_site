@@ -48,9 +48,11 @@ html[data-theme="light"] {
 
 .slider_one_info{
     width: 130px;
-    margin-top: -130px;
-    margin-left: 34px;
+    position: relative;
+    left: 10%;
+    bottom: 40%;
     color: var(--color-slider-one-text);
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .slider_one_info h3{
@@ -58,6 +60,8 @@ html[data-theme="light"] {
 }
 
 .slider_one_btn_container{
+    position: relative;
+    bottom: 36%;
     display: flex;
     justify-content: center;
 }

@@ -8,7 +8,7 @@ import { Portfolios } from "../../components/Home/Portfolios/Portfolios";
 export const Home = () => {
   //LOGICA
   useEffect(() => {
-    // Desplaza la página al principio (0, 0)
+    document.title = "Valmaz - Agencia de Marketign Digital";
     window.scrollTo(0, 0);
   }, []);
   return (

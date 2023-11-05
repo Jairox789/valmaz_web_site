@@ -34,6 +34,7 @@ export const AdminServices = () => {
   };
 
   useEffect(() => {
+    document.title = "Administrador de sitio (Servicios)";
     getServicesInfo();
     window.scrollTo(0, 0);
   }, []);

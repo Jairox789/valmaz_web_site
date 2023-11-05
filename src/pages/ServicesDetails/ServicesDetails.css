@@ -34,7 +34,13 @@ html[data-theme="dark"] {
     align-items: center;
     justify-content: space-around;
 }
+.services_detail_info_title{
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+.main_services_detail_info span{
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .main_services_detail_info div:nth-child(1){
     margin-right: 30px;
 }
