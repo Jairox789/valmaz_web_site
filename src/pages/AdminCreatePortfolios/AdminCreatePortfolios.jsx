@@ -31,7 +31,7 @@ export const AdminCreatePortfolios = ({ editMode = false }) => {
     mainImg: mainImg ? mainImg : "",
     slug: slug,
     title: title,
-    service: servicesSelected,
+    service: "servicesSelected", // ARREGLAR
     description: description,
     imgs: imgs,
     status: true,

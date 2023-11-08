@@ -59,7 +59,7 @@ export const Footer = () => {
           <Link to="/servicios">Servicios</Link>
           <Link to="/proyectos">Proyectos</Link>
           <Link to="/agencia">Agencia</Link>
-          <Link to="/talentos">Talentos</Link>
+          <Link to="/talento">Talentos</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/cotizar">Cotizar</Link>
           <Link to="/mi-cuenta">Mi cuenta</Link>
